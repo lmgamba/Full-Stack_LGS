@@ -1,0 +1,129 @@
+@import url(reset.css);
+@import url(variables.css);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"); /*importa iconos*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente), sans-serif;
+  font-size: var(--fuente-size);
+}
+
+header {
+  background-color: white;
+  width: 100vw;
+  height: auto;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.contact {
+  color: white;
+  width: 100%;
+  background-color: var(--color-oscuro);
+  border: 10px blue;
+  margin: 0;
+  z-index: 10;
+
+  i {
+    margin: 15px;
+    color: var(--color-rojo);
+    font-size: 150%;
+    justify-content: center;
+  }
+  a {
+    display: none;
+    /* color: white; */
+  }
+}
+
+/* header {
+  display: flex;
+  display: inline-block;
+  border: 2px solid blue;
+} */
+/* header nav i {
+  color: var(--color-rojo);
+} */
+
+header nav li {
+  display: inline-block;
+  /* margin: var(--general-margin);
+  justify-content: center;
+  text-align: center; */
+}
+
+/* header :last-child {
+  display: inline-block;
+} */
+
+/* header image {
+  display: inline-block;
+} */
+
+section {
+  h2 {
+    font-family: var(--fuente-second);
+  }
+  li {
+    display: inline-block;
+    margin: var(--general-margin);
+    justify-content: center;
+    text-align: center;
+  }
+}
+span {
+  color: var(--color-rojo);
+}
+
+.main {
+  /* margin-top: 200px; */
+  background-image: url("./images/fondo.jpg");
+  background-size: 280%;
+  background-position: 80%;
+  background-position-x: 60%;
+  height: 60vh;
+  padding: 50px;
+  position: inherit;
+  h1 {
+    font-family: var(--fuente-second);
+    color: white;
+    font-size: 170%;
+  }
+  i {
+    color: white;
+    font-size: 200%;
+  }
+}
+
+.main button {
+  display: block;
+  background-color: var(--color-rojo);
+  color: white;
+  margin: var(--general-margin);
+  padding: var(--general-padding);
+  border: 0;
+}
+
+/* .cuerpo :nth-child(2) {
+  display: inline-flex;
+  justify-content: center;
+  gap: 160px;
+} */
+
+/* section article {
+  background-color: lightcyan;
+  padding: var(--general-padding);
+  border: 2px solid;
+  min-width: var(--ancho-cols);
+  max-width: var(--ancho-cols) + 10px;
+  h3 {
+    font-weight: bold;
+  }
+  justify-content: center;
+} */

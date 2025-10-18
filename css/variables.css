@@ -1,0 +1,16 @@
+:root {
+  /* Colores principales */
+  --color-rojo: #fa573a;
+  --color-oscuro: #21242e;
+  /* Fuentes y tamaños de fuentes y columnas*/
+  --fuente: Montserrat;
+  --fuente-second: Handlee;
+  --fuente-size: 16px;
+  --ancho-cols: 160px;
+  /* Breakpoints de los dispositivos */
+  --movil_bp: 600px;
+  --tablet_bp: 768px;
+  --desktop_bp: 1004px;
+  --general-margin: 10px;
+  --general-padding: 20px;
+}
