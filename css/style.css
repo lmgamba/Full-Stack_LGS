@@ -81,14 +81,6 @@ header nav {
     border-bottom: 2px solid lightgray;
   }
 }
-.articulos {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100vw;
-  margin-bottom: 10px;
-}
 
 section {
   h2 {
@@ -106,11 +98,21 @@ section {
   }
 }
 
+.subsec {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  margin-bottom: 10px;
+}
+
 span {
   color: var(--color-rojo);
 }
 
 .fondo {
+  width: 100vw;
   background-image: url("./images/fondo.jpg");
   background-size: 280%;
   background-position: 80%;
@@ -175,7 +177,7 @@ article {
   border-bottom: 1px solid gray;
 }
 
-.articulos.services {
+.subsec.services {
   i {
     color: var(--color-rojo);
     padding: 5px;
@@ -242,7 +244,7 @@ article {
     }
   }
 
-  .articulos {
+  .subsec {
     flex-direction: row;
   }
 
@@ -255,7 +257,7 @@ article {
     padding: 70px;
   }
 
-  .articulos.about {
+  .subsec.about {
     article {
       max-width: 400px;
     }
