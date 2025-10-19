@@ -42,8 +42,9 @@
       </nav>
     </header>
     <div class="cuerpo">
-      <section class="fondo">
-        <div class="main">
+      <div class="fondo">
+        <!-- Bloque extra para poner la imagen de fondo, y bajar brillo de imagen  en el main -->
+        <section class="main">
           <h1>Las mejores hamburguesas del mundo</h1>
           <span>Bienvenido a nuestra hamburgueseria</span>
           <p>Come a partir de 15€</p>
@@ -54,12 +55,13 @@
             <li><i class="fa-brands fa-twitter"></i></li>
             <li><i class="fa-brands fa-instagram"></i></li>
           </ul>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section>
         <h2>Our <span>Services</span></h2>
-        <div class="articulos">
+        <!-- Bloque extra para separar h2 de los articulos al usar flex -->
+        <div class="articulos services">
           <article>
             <i class="fa-solid fa-burger"></i>
             <h3>1. Carne 100% natural</h3>
@@ -99,11 +101,11 @@
       </section>
       <section>
         <h2>About <span>Us</span></h2>
-        <div class="articulos">
+        <div class="articulos about">
           <figure>
             <img src="./css/images/about-main.jpg" alt="Equipo" />
           </figure>
-          <article>
+          <article class="history">
             <h3>The History</h3>
             <span>Our restaurant</span>
             <p>

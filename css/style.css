@@ -31,21 +31,18 @@ header nav {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  ul {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 }
 
 .contact {
   color: white;
-  width: 100%;
   background-color: var(--color-oscuro);
-  ul {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-  li {
-    display: inline-block;
-  }
   i {
     padding: 20px;
     color: var(--color-rojo);
@@ -58,7 +55,6 @@ header nav {
 
 .bar {
   margin: 0;
-  width: 100%;
   padding: 10px;
   figure {
     justify-content: left;
@@ -67,7 +63,6 @@ header nav {
     }
   }
   i {
-    display: block;
     font-size: 200%;
     color: grey;
     margin-right: 25px;
@@ -76,39 +71,34 @@ header nav {
 }
 
 .nav-menu {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   transform: 0.3s;
   li {
     width: 90%;
     padding: 5px;
-    justify-self: center;
     text-align: center;
     border-bottom: 2px solid lightgray;
   }
 }
+.articulos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  margin-bottom: 10px;
+}
 
 section {
-  .articulos {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 100vw;
-    margin-bottom: 10px;
-  }
   h2 {
     width: fit-content;
     margin-top: 5px;
-    justify-self: center;
-    text-align: center;
-    font-family: var(--fuente-second);
-    font-size: 150%;
-    font-weight: bold;
     border-bottom: 1px dashed var(--color-rojo);
+    font-family: var(--fuente-second);
+    justify-self: center;
+    font-weight: bold;
+    font-size: 150%;
   }
   li {
     display: inline-block;
@@ -122,7 +112,6 @@ span {
 
 .fondo {
   background-image: url("./images/fondo.jpg");
-  /* filter: brightness(0.5); */
   background-size: 280%;
   background-position: 80%;
   background-position-x: 60%;
@@ -132,7 +121,6 @@ span {
   margin-top: 240px;
   height: 60vh;
   padding: 30px;
-  position: relative;
   margin-bottom: 20px;
   width: 100%;
   background: rgb(0, 0, 0, 0.4);
@@ -180,37 +168,33 @@ button {
 }
 
 article {
-  width: 85%;
+  width: 80%;
   text-align: justify;
   padding: 10px;
   margin: 20px;
+  border-bottom: 1px solid gray;
 }
 
-.cuerpo :nth-child(2) {
-  /* justify-content: center;
-  align-items: center; */
-  article {
-    border-bottom: 1px solid gray;
+.articulos.services {
+  i {
+    color: var(--color-rojo);
+    padding: 5px;
+    border: 2px solid;
+  }
+  p {
+    padding: 5px;
+  }
+  .more {
+    border: none;
+    font-weight: bold;
+    color: var(--color-rojo);
     i {
-      color: var(--color-rojo);
-      padding: 5px;
-      border: 2px solid;
-    }
-    p {
-      padding: 5px;
-    }
-    .more {
       border: none;
-      font-weight: bold;
-      color: var(--color-rojo);
-      i {
-        border: none;
-      }
     }
   }
 }
 
-.cuerpo :last-child {
+.cuerpo :nth-child(3) {
   figure {
     text-align: center;
     margin-top: 10px;
@@ -221,7 +205,7 @@ article {
       border: 2px solid var(--color-rojo);
     }
   }
-  article {
+  .history {
     border-bottom: none;
   }
   text-align: justify;
@@ -237,8 +221,6 @@ article {
     }
   }
   .bar {
-    display: flex;
-    flex-wrap: wrap;
     align-items: center;
     width: 100%;
     padding: 10px;
@@ -260,6 +242,10 @@ article {
     }
   }
 
+  .articulos {
+    flex-direction: row;
+  }
+
   .fondo {
     background-size: cover;
   }
@@ -269,12 +255,7 @@ article {
     padding: 70px;
   }
 
-  .cuerpo :nth-child(2) {
-    flex-direction: row;
-  }
-
-  .cuerpo :nth-child(3) {
-    flex-direction: row;
+  .articulos.about {
     article {
       max-width: 400px;
     }
