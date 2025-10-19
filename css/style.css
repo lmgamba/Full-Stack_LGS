@@ -175,6 +175,8 @@ article {
   padding: 10px;
   margin: 20px;
   border-bottom: 1px solid gray;
+  align-content: center;
+  text-align: justify;
 }
 
 .subsec.services {
@@ -257,9 +259,15 @@ article {
     padding: 70px;
   }
 
+  article {
+    border-left: 1px solid gray;
+    border-bottom: none;
+  }
+
   .subsec.about {
     article {
       max-width: 400px;
+      border: none;
     }
   }
 }
