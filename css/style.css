@@ -20,19 +20,25 @@ header {
   top: 0;
   left: 0;
   z-index: 5;
+  display: fixed;
 }
 
 header nav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .contact {
   color: white;
   width: 100%;
   background-color: var(--color-oscuro);
-  justify-content: center;
-
+  ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
   li {
     display: inline-block;
   }
@@ -40,7 +46,6 @@ header nav {
     padding: 20px;
     color: var(--color-rojo);
     font-size: 150%;
-    justify-content: center;
   }
   a {
     display: none;
@@ -49,13 +54,9 @@ header nav {
 }
 
 .bar {
-  /* figure {
-    display: inline-block;
-  /* } */
   margin: 0;
-  justify-content: space-evenly;
+
   width: 100%;
-  /* align-items: center; */
   padding: 10px;
   figure {
     justify-content: left;
@@ -64,45 +65,25 @@ header nav {
     }
   }
   i {
-    /* width: 20%; */
     font-size: 200%;
     color: grey;
+    margin-right: 25px;
   }
-  li {
+  ul {
     display: none;
   }
 }
 
-/* header {
-  display: flex;
-  display: inline-block;
-  border: 2px solid blue;
-} */
-/* header nav i {
-  color: var(--color-rojo);
-} */
-
-/* 
-header nav li {
-  display: inline-block;
-  margin: var(--general-margin);
-  justify-content: center;
-  text-align: center; 
-}
-*/
-
-/* header :last-child {
-  display: inline-block;
-} */
-
-/* header image {
-  display: inline-block;
-} */
-
 section {
-  display: flex;
-  flex-direction: column;
+  .articulos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100vw;
+    margin-bottom: 10px;
+  }
   h2 {
+    width: auto;
     font-family: var(--fuente-second);
     font-size: 150%;
     font-weight: bold;
@@ -115,30 +96,31 @@ section {
     margin: var(--general-margin);
   }
 }
+
 span {
   color: var(--color-rojo);
 }
 
 .main {
-  /* margin-top: 200px; */
   background-image: url("./images/fondo.jpg");
   background-size: 280%;
   background-position: 80%;
   background-position-x: 60%;
   height: 60vh;
   padding: 30px;
+
   h1 {
     font-family: var(--fuente-second);
-    color: white;
     font-size: 180%;
+    color: white;
   }
-
-  ul {
-    display: none;
+  p {
+    color: white;
   }
   i {
-    color: white;
     font-size: 200%;
+    margin-right: 10px;
+    color: white;
   }
 }
 
@@ -146,14 +128,15 @@ h3 {
   font-weight: bold;
 }
 
-.main button {
+button {
   display: flex;
   max-width: 300px;
   width: 170px;
-  height: 50px;
+  height: 40px;
   background-color: var(--color-rojo);
   color: white;
-  margin: 10px;
+  margin: 0px;
+  margin-top: 10px;
   padding: 5px;
   border: 0;
   font-size: 80%;
@@ -161,21 +144,25 @@ h3 {
   text-align: center;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   i {
     font-size: 90%;
+    padding-left: 5px;
   }
+}
+
+article {
+  width: 85%;
+  text-align: justify;
+  padding: 10px;
+  margin: 20px;
 }
 
 .cuerpo :nth-child(2) {
   /* justify-content: center;
   align-items: center; */
-
   article {
-    width: 85%;
     border-bottom: 1px solid gray;
-    text-align: justify;
-    padding: 10px;
-    margin: 20px;
     i {
       color: var(--color-rojo);
       padding: 5px;
@@ -188,6 +175,9 @@ h3 {
       border: none;
       font-weight: bold;
       color: var(--color-rojo);
+      i {
+        border: none;
+      }
     }
   }
 }
@@ -195,15 +185,14 @@ h3 {
 .cuerpo :last-child {
   figure {
     text-align: center;
-
+    margin-top: 10px;
     img {
       max-width: 400px;
+      padding: 10px;
       border: 2px solid var(--color-rojo);
     }
   }
   text-align: justify;
-  padding: 10px;
-  margin: 20px;
 }
 
 @media (width > 768px) {
@@ -214,8 +203,8 @@ h3 {
     }
   }
   .bar {
-    /* display: flex;
-    flex-wrap: wrap; */
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     width: 100%;
     /* align-items: center; */
@@ -226,11 +215,13 @@ h3 {
     i {
       display: none;
     }
-    li {
-      display: inline-block;
-      justify-content: end;
-      a {
-        justify-content: right;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      width: 70%;
+      li {
+        display: inline-block;
       }
     }
   }
@@ -252,9 +243,6 @@ h3 {
 
   .cuerpo :nth-child(2) {
     flex-direction: row;
-    h2 {
-      display: block;
-    }
   }
 
   .cuerpo :nth-child(3) {
