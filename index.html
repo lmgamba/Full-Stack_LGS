@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
-      <nav class="contact">
+    <footer>
+      <div class="container">
         <!-- Barra de contactos -->
-        <ul>
+        <ul class="contact">
           <li>
             <i class="fa-solid fa-envelope"></i
             ><a href="mailto:">rover@gmail.com</a>
@@ -26,42 +26,57 @@
             <i class="fa-solid fa-circle-user"></i><a href="#">Usuario</a>
           </li>
         </ul>
-      </nav>
-      <nav class="bar">
+      </div>
+    </footer>
+    <header>
+      <div class="container">
         <!-- Barra de navegacion principal -->
         <figure>
           <img src="./css/images/logo.jpg" alt="Logo_Rovers" />
         </figure>
         <i class="fa-solid fa-bars"></i>
-        <ul class="nav-menu">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Equipo</a></li>
-        </ul>
-      </nav>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Equipo</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <div class="cuerpo">
+    <main class="cuerpo">
       <div class="fondo">
         <!-- Bloque extra para poner la imagen de fondo, y bajar brillo de imagen  en el main -->
-        <section class="main">
-          <h1>Las mejores hamburguesas del mundo</h1>
-          <span>Bienvenido a nuestra hamburgueseria</span>
-          <p>Come a partir de 15€</p>
-          <button>Nuestra Carta <i class="fa-solid fa-arrow-right"></i></button>
-          <ul>
-            <!-- Iconos de redes -->
-            <li><i class="fa-brands fa-facebook"></i></li>
-            <li><i class="fa-brands fa-twitter"></i></li>
-            <li><i class="fa-brands fa-instagram"></i></li>
-          </ul>
+        <section class="hero">
+          <div class="container">
+            <h1>Las mejores hamburguesas del mundo</h1>
+            <span>Bienvenido a nuestra hamburgueseria</span>
+            <p>Come a partir de 15€</p>
+            <button class="btn">
+              Nuestra Carta <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <ul>
+              <!-- Iconos de redes -->
+              <li>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
         </section>
       </div>
 
       <section>
         <h2>Our <span>Services</span></h2>
+        <div class="divider"><div class="x">X</div></div>
         <!-- Bloque extra para separar h2 de los subsec al usar flex -->
-        <div class="subsec services">
+        <div class="container">
           <article>
             <i class="fa-solid fa-burger"></i>
             <h3>1. Carne 100% natural</h3>
@@ -101,10 +116,16 @@
       </section>
       <section>
         <h2>About <span>Us</span></h2>
-        <div class="subsec about">
-          <figure>
-            <img src="./css/images/about-main.jpg" alt="Equipo" />
-          </figure>
+        <div class="divider"><div class="x">X</div></div>
+        <div class="container">
+          <div class="image-content">
+            <div class="orange-frame"></div>
+            <img
+              src="./css/images/about-main.jpg"
+              alt="Equipo"
+              class="img-container"
+            />
+          </div>
           <article class="history">
             <h3>The History</h3>
             <span>Our restaurant</span>
@@ -114,10 +135,12 @@
               necessitatibus rem quam ipsa nemo incidunt maxime praesentium,
               omnis, possimus autem porro accusantium sapiente id!
             </p>
-            <button>Leer más</button>
+            <button class="btn">
+              Leer más <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </article>
         </div>
       </section>
-    </div>
+    </main>
   </body>
 </html>
