@@ -105,8 +105,7 @@ main {
   margin: 0 auto;
   background-image: url("./images/fondo.jpg");
   background-size: 280%;
-  background-position: 80%;
-  background-position-x: 60%;
+  background-position: 60%;
 }
 
 .hero {
@@ -116,7 +115,7 @@ main {
   height: 60vh;
   padding: 50px;
   width: 100%;
-  background: rgb(0, 0, 0, 0.4);
+  background: rgb(0, 0, 0, 0.5);
 
   h1 {
     font-family: var(--fuente-second);
@@ -197,31 +196,28 @@ article {
 
 /* SECCION ABOUT US */
 
-/* Marco naranja de imagen */
+/* Marco naranja */
 .image-content {
   display: flex;
   flex-wrap: wrap;
   position: relative;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin: 35px auto;
 
   .orange-frame {
-    width: 70%;
-    padding-top: 50%;
+    width: 80%;
+    height: 100%;
     position: absolute;
-    justify-content: center;
+    align-content: center;
     border: 3px solid var(--color-rojo);
-    transform: scale(0.5);
-    /* top: 50%;
-  left: 50%; */
-    transform: translate(-50%, -50%);
+    left: 10%;
     transform: rotate(5deg) skewX(0deg) scaleY(cos(0deg));
     z-index: 1;
   }
+
   img {
-    /* position: absolute; */
-    width: 70%;
+    margin: 0 auto;
+    max-width: 90%;
     transform: rotate(-2deg) skewX(0deg) scaleY(cos(0deg));
     z-index: 2;
   }
@@ -234,8 +230,19 @@ article {
 
 /* RESPONSIVE */
 
+@media (width > 600px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .fondo {
+    background-size: 190%;
+    background-position: 65%;
+  }
+}
+
 @media (width > 768px) {
-  /* ESTILOS PARA EL FOOTER . CONTACTOS */
+  /* ESTILOS PARA EL FOOTER - CONTACTOS */
 
   footer {
     a {
@@ -286,13 +293,13 @@ article {
   }
 
   .image-content {
-    width: calc(50% - 20px);
-    justify-content: right;
+    width: calc(50% - var(--general-margin));
+    justify-content: space-between;
   }
 
   .history {
     border: none;
 
-    width: calc(40% - var(--general-margin));
+    width: calc(50% - var(--general-margin));
   }
 }
