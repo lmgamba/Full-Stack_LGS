@@ -1,5 +1,5 @@
 @import url(reset.css);
-@import url(layout.css);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"); /*importa iconos*/
 
 body {
   background-color: whitesmoke;
@@ -7,8 +7,8 @@ body {
 
 .container {
   border: 2px dashed brown;
-  width: 90%;
-  max-width: 1100px;
+  width: 1650px;
+  max-width: 3000px;
   /* Para que el espacio restante se distribuya equitativamente */
   margin: 0 auto;
   display: flex;
@@ -27,7 +27,7 @@ section {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid lightblue;
+  box-shadow: 2px 2px 10px lightgray;
   background-color: white;
   border-radius: 20px;
 }
@@ -36,6 +36,14 @@ h2 {
   display: block;
   font-weight: bold;
   font-size: 150%;
+}
+
+form {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .filtros {
@@ -52,11 +60,17 @@ h2 {
     }
   }
 
+  input {
+    height: 30px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+  }
+
   .filtro_precio {
-    border: 2px solid magenta;
     width: 30%;
     input {
-      width: 90%;
+      margin: 2px auto;
+      width: 40%;
     }
   }
 
@@ -75,8 +89,8 @@ button {
   display: flex;
   flex-wrap: wrap;
   border: 2px solid blue;
-  gap: 20px;
-  /* justify-content: space-evenly; */
+  gap: 24px;
+  justify-content: start;
 }
 
 .caja_producto {
@@ -84,17 +98,27 @@ button {
   height: 300px;
   padding: 10px;
   border: 2px solid lightgray;
+  box-shadow: 1px 1px 10px lightgray;
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
   position: relative;
 
-  .fav {
-    border: 2px solid;
+  .destacado {
     z-index: 3;
     position: absolute;
     right: 10px;
     justify-content: center;
+    i {
+      color: lightgray;
+      font-size: 130%;
+    }
+  }
+
+  .fav {
+    i {
+      color: black;
+    }
   }
 
   .imagen {
@@ -126,8 +150,7 @@ button {
       margin: 5px;
     }
   }
-
-  .categoria {
+  .gris {
     color: gray;
     font-size: 100%;
   }
@@ -141,10 +164,5 @@ button {
     color: navy;
     font-size: 150%;
     font-weight: bold;
-  }
-
-  .gris {
-    color: gray;
-    font-size: 100%;
   }
 }
