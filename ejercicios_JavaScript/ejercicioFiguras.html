@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej figura</title>
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: system-ui, Arial, sans-serif;
+        padding: 20px;
+      }
+      form {
+        max-width: 420px;
+        margin-bottom: 18px;
+      }
+      #canvas {
+        width: 100%;
+        min-height: 220px;
+        border: 2px dashed #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fafafa;
+      }
+      /* ensure shape default styles don't inherit unexpected margins */
+      #canvas > div {
+        box-sizing: border-box;
+      }
+    </style>
+
+    <form id="figura_properties" action="">
+      <h1>Dibuja tu figura</h1>
+      <label for="figura">Selecciona la figura:</label>
+      <select name="figura" id="figura" name="figura">
+        <option value="circulo">circulo</option>
+        <option value="cuadrado">cuadrado</option>
+      </select>
+
+      <label for="favcolor">Selecciona un color:</label>
+      <input type="color" id="favcolor" name="color" value="#ff0000" />
+
+      <div>
+        <label for="ancho">Selecciona el ancho (entre 5 y 1000px):</label>
+        <input type="number" id="ancho" name="ancho" min="5" max="1000" />
+      </div>
+
+      <button id="draw">Draw</button>
+    </form>
+
+    <div id="canvas" aria-label="Área de dibujo">
+      <!-- single persistent shape element; hidden until user draws -->
+      <div id="shape" aria-hidden="true" style="display: none"></div>
+    </div>
+
+    <script>
+      // Simplified: update a single element to show circle or square.
+      const form = document.getElementById("figura_properties");
+      const shape = document.getElementById("shape");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const figura = document.getElementById("figura").value;
+        const color = document.getElementById("favcolor").value || "#ff0000";
+        const anchoRaw = document.getElementById("ancho").value;
+
+        // minimal validation + default
+        const ancho = anchoRaw
+          ? Math.max(5, Math.min(1000, Number(anchoRaw)))
+          : 100;
+        if (isNaN(ancho) || ancho < 5) {
+          alert("Introduce un ancho válido (>= 5).");
+          return;
+        }
+
+        // apply styles to the single shape element
+        shape.style.display = "block";
+        shape.style.width = ancho + "px";
+        shape.style.height = ancho + "px";
+        shape.style.backgroundColor = color;
+        shape.style.borderRadius = figura === "circulo" ? "50%" : "0%";
+        shape.style.margin = "8px";
+        shape.setAttribute("aria-hidden", "false");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej figura - completo</title>
+    <style>
+      body {
+        font-family: system-ui, Arial, sans-serif;
+        padding: 20px;
+      }
+      form {
+        max-width: 420px;
+        margin-bottom: 18px;
+      }
+      #canvas {
+        width: 100%;
+        min-height: 220px;
+        border: 2px dashed #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fafafa;
+      }
+      /* ensure shape default styles don't inherit unexpected margins */
+      #canvas > div {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="figura_properties" action="">
+      <h1>Dibuja tu figura</h1>
+
+      <label for="figura">Selecciona la figura:</label>
+      <select id="figura" name="figura">
+        <option value="circulo">circulo</option>
+        <option value="cuadrado">cuadrado</option>
+        <option value="triangulo">triangulo</option>
+      </select>
+
+      <label for="favcolor">Selecciona un color:</label>
+      <input type="color" id="favcolor" name="color" value="#ff0000" />
+
+      <div>
+        <label for="ancho">Selecciona el ancho (entre 5 y 1000px):</label>
+        <input type="number" id="ancho" name="ancho" min="5" max="1000" />
+      </div>
+
+      <button type="submit" id="draw">Draw</button>
+    </form>
+
+    <div id="canvas" aria-label="Área de dibujo"></div>
+
+    <script>
+      const form = document.getElementById("figura_properties");
+      const canvas = document.getElementById("canvas");
+
+      function clearCanvas() {
+        canvas.innerHTML = "";
+      }
+
+      function drawShape({ figura, color, ancho }) {
+        clearCanvas();
+
+        const size = Math.max(5, Math.min(1000, Number(ancho) || 100));
+
+        if (figura === "circulo" || figura === "cuadrado") {
+          const el = document.createElement("div");
+          el.style.width = size + "px";
+          el.style.height = size + "px";
+          el.style.backgroundColor = color;
+          el.style.borderRadius = figura === "circulo" ? "50%" : "0%";
+          el.style.margin = "8px";
+          canvas.appendChild(el);
+          return;
+        }
+
+        if (figura === "triangulo") {
+          // We'll create a zero-sized element with borders to form a triangle.
+          // border-left/right = half base, border-bottom = height with color.
+          const el = document.createElement("div");
+          const half = Math.floor(size / 2);
+          el.style.width = "0";
+          el.style.height = "0";
+          el.style.borderLeft = half + "px solid transparent";
+          el.style.borderRight = half + "px solid transparent";
+          el.style.borderBottom = size + "px solid " + color;
+          // center horizontally in the flex container
+          el.style.margin = "8px";
+          canvas.appendChild(el);
+          return;
+        }
+
+        const el = document.createElement("div");
+        el.textContent = "Figura no soportada";
+        canvas.appendChild(el);
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const figura = data.get("figura");
+        const color = data.get("color") || "#ff0000";
+        const ancho = data.get("ancho");
+
+        if (!ancho || Number(ancho) < 5) {
+          if (!ancho) {
+            drawShape({ figura, color, ancho: 100 });
+            return;
+          }
+          alert("El ancho debe ser un número mayor o igual a 5");
+          return;
+        }
+
+        drawShape({ figura, color, ancho });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="eS">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+    <h1>Gestion de Productos</h1>
+    </div>
+    <section>
+      <div class="container">
+        <h2>Filtros de Busqueda</h2>
+        <label for="nombre_producto">Nombre del Producto</label>
+        <input type="text" name="nombre_producto" />
+        <label for="r-precio">Rango precios</label>
+        <input type="range" name="r-precio" id="r-precio" />
+        <button type="button">Filtrar</button>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h2>Productos Destacados</h2>
+        <div class="productos">
+          <article class="caja_producto">
+            <div class="fav">X</div>
+            <div class="imagen"></div>
+            <ul>
+              <il class="categoria">Categoria</il>
+              <il class="nombre">Nombre</il>
+              <il class="referencia">Referencia</il>
+              <il class="precio">$ Precio</il>
+            </ul>
+          </article>
+          <article class="caja_producto">
+            <div class="fav">X</div>
+            <img src="./css/images/zapatilla.jpg" alt="Zapatilla deportiva" />
+            <ul>
+              <il class="gris">Calzado</il>
+              <il class="nombre">Zapatilla Deportiva X-run</il>
+              <il class="gris">SKU: ZR 4583</il>
+              <il class="precio">$ 120.00</il>
+            </ul>
+          </article>
+          <article class="caja_producto">
+            <ul>
+              <il></il>
+              <il></il>
+              <il></il>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section>
+        <div class="container">
+      <h2>Todos los Productos</h2>
+      <div class="productos">
+          <article class="caja_producto">
+            <div class="fav">X</div>
+            <img src="./css/images/mochila_cuero.jpg" alt="Mochila de Cuero" />
+            <ul>
+              <il class="categoria">Categoria</il>
+              <il class="nombre">Nombre</il>
+              <il class="referencia">Referencia</il>
+              <il class="precio">$ Precio</il>
+            </ul>
+          </article>
+          <article class="caja_producto">
+            <div class="fav">X</div>
+            <img src="./css/images/headphones.png" alt="Audifonos" />
+            <ul>
+              <il class="gris">Calzado</il>
+              <il class="nombre">Zapatilla Deportiva X-run</il>
+              <il class="gris">SKU: ZR 4583</il>
+              <il class="precio">$ 120.00</il>
+            </ul>
+          </article>
+          <article class="caja_producto">
+            <ul>
+              <il></il>
+              <il></il>
+              <il></il>
+            </ul>
+          </article>
+        </div>
+      </div>
+      </div>
+    </section>
+  </body>
+</html>
