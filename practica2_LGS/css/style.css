@@ -5,14 +5,26 @@ body {
   background-color: whitesmoke;
 }
 
+.container {
+  border: 2px dashed brown;
+  width: 90%;
+  max-width: 1100px;
+  /* Para que el espacio restante se distribuya equitativamente */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 h1 {
   font-size: 190%;
   font-weight: bolder;
 }
 
 section {
-  width: 90%;
+  width: 80%;
   margin: 20px auto;
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
   border: 2px solid lightblue;
@@ -20,34 +32,55 @@ section {
   border-radius: 20px;
 }
 
-.container {
-  margin: 30px;
-  max-width: 1004px;
-  left: 10px;
-  border: 2px solid green;
+h2 {
+  display: block;
+  font-weight: bold;
+  font-size: 150%;
 }
 
-input {
-  margin-right: 30px;
+.filtros {
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  .filtro_nombre {
+    width: 60%;
+    input {
+      width: 80%;
+    }
+  }
+
+  .filtro_precio {
+    border: 2px solid magenta;
+    width: 30%;
+    input {
+      width: 90%;
+    }
+  }
+
+  label {
+    display: block;
+  }
+}
+
+button {
+  width: 100px;
+  font-size: 100%;
 }
 .productos {
   margin: 0 auto;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid salmon;
-  gap: 30px;
+  border: 2px solid blue;
+  gap: 20px;
   /* justify-content: space-evenly; */
 }
 
-h2 {
-  /* display: block; */
-  font-weight: bold;
-  font-size: 150%;
-}
-
 .caja_producto {
-  width: 250px;
+  width: 230px;
   height: 300px;
   padding: 10px;
   border: 2px solid lightgray;
@@ -78,9 +111,9 @@ h2 {
   img {
     /* max-width: 200px; */
     height: 60%;
+    max-width: 95%;
     width: auto;
     border: 2px solid rebeccapurple;
-
     margin: auto;
   }
 
