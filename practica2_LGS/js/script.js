@@ -13,10 +13,6 @@
 const seccionDestacados = document.querySelector("#prod_destacados .productos");
 const seccionAllProd = document.querySelector("#prod_all .productos");
 
-//Limpiar html
-seccionDestacados.innerHTML = "";
-seccionAllProd.innerHTML = "";
-
 function pintarProducto(producto, dom) {
   const article = document.createElement("article");
   const dest = document.createElement("div");
@@ -52,9 +48,7 @@ function pintarProducto(producto, dom) {
 
   //Contenido
   boton_dest.innerHTML = `<i class="fa-solid fa-star"></i>`;
-  boton_dest.addEventListener("click", () => {
-    console.log("Button clicked!");
-  });
+  boton_dest.addEventListener("click", destacar);
   imagen.src = producto.imagen_url; // imagen por defecto
   imagen.alt = producto.nombre;
   li_cat.textContent = producto.categoria;
@@ -69,6 +63,9 @@ function pintarProducto(producto, dom) {
 }
 
 function pintarTodosProductos(ArrayProductos, dom_all, dom_destacado) {
+  //Limpiar html
+  seccionDestacados.innerHTML = "";
+  seccionAllProd.innerHTML = "";
   for (let producto of ArrayProductos) {
     pintarProducto(producto, dom_all);
     if (producto.destacado == true) {
@@ -92,16 +89,23 @@ function obtenerDatosForm(event) {
     precio_max: Number(event.target.r_precio_max.value),
   };
 
-  // filtro de productos que cumplen la  busqueda:
+  console.log(filtros_prod);
+
+  // llama a la funcion que filtra los productos que cumplen la  busqueda:
   filtrar_producto(filtros_prod);
 
   event.target.reset();
 }
 
-/////////////////////77
+////////////////////
 
 function filtrar_producto(filtros_prod) {
-  // filtro de productos que cumplen la  busqueda:
+  if (filtros_prod.precio_max === 0) {
+    filtros_prod.precio_max = 999999; //max default, en caso que no se llene el input del precio max
+  }
+
+  //productos resultantes de la busqueda con los filtros recibidos
+  //filter: (producto) =>  (nombre filtro y producto en lowercase es igual?) && (pmin < precio <pmax?)
 
   let prod_filtrados = productos.filter(
     (producto) =>
@@ -116,16 +120,33 @@ function filtrar_producto(filtros_prod) {
   seccionDestacados.innerHTML = "";
   seccionAllProd.innerHTML = "";
 
+  // mostrar solo productos filtrados
   pintarTodosProductos(prod_filtrados, seccionAllProd, seccionDestacados);
 }
 
 form.addEventListener("submit", obtenerDatosForm);
 
-// parte 3 ?
+// parte 3 : funcionamiento del boton destacado ?
+// si  clic -> producto.destacado != producto.destacado
+//hay que actualizar el arreglo de json
 
-// function destacar(event) {
-//   const ClasePadre = event.target.parentNode.classList[1];
-//   producto.destacado != producto.destacado;
-// productos.push(producto) //hay que actualizar el arreglo de json -> buscar como sobreescribir objeto en lugar de añadirlo
-//   pintarTodosProductos(productos, seccionAllProd, seccionDestacados);
-// }
+function destacar(event) {
+  // 1. buscar en la clase del boton la referencia del producto
+  const ClaseSKU = event.target.parentNode.classList[1];
+
+  // usando find buscar el encontrar indice del producto de con la misma referencia
+  let index_producto = productos.findIndex((producto) =>
+    producto.sku.includes(ClaseSKU)
+  );
+
+  //producto resultado del find
+  prod_a_Destacar = productos[index_producto];
+
+  prod_a_Destacar.destacado = !prod_a_Destacar.destacado;
+
+  console.log(prod_a_Destacar.destacado);
+  //productos.push(prod_a_Destacar); //-> sobreescribir objeto en lugar de añadirlo --  es necesario?
+
+  //actualizar los productos que se muestran como destacados
+  pintarTodosProductos(productos, seccionAllProd, seccionDestacados);
+}

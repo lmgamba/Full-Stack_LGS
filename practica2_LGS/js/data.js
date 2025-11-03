@@ -1,6 +1,6 @@
 const productos = [
   {
-    // 1
+    // 0
     categoria: "Calzado",
     nombre: "Zapatilla Deportiva X-run",
     stock: 39,
@@ -10,18 +10,18 @@ const productos = [
     destacado: true,
   },
   {
-    // 2
+    // 1
     categoria: "Calzado",
     nombre: "Stilletto Legend Black",
     stock: 79,
     sku: "CC02-02",
-    precio: 205.0,
+    precio: 305.0,
     imagen_url:
       "https://png.pngtree.com/png-vector/20230413/ourmid/pngtree-black-transparent-high-heels-leather-shoes-png-image_6697777.png",
     destacado: false,
   },
   {
-    // 3
+    // 2
     categoria: "Bolsos",
     nombre: "Bolso City 25",
     stock: 21,
@@ -32,18 +32,18 @@ const productos = [
     destacado: false,
   },
   {
-    // 4
+    // 3
     categoria: "Bolsos",
     nombre: "Bolso New Gen",
     stock: 39,
     sku: "BB02-04",
-    precio: 357.0,
+    precio: 757.0,
     imagen_url:
       "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/0077b8ad565d2ee860b64ef4f0c10af5.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp",
     destacado: false,
   },
   {
-    // 5
+    // 4
     categoria: "Bolsos",
     nombre: "Mochila Cuero Sintético",
     stock: 39,
@@ -53,7 +53,7 @@ const productos = [
     destacado: false,
   },
   {
-    // 6
+    // 5
     categoria: "Bolsos",
     nombre: "Mochila Laptop Legacy",
     stock: 30,
@@ -64,7 +64,7 @@ const productos = [
     destacado: false,
   },
   {
-    // 7
+    // 6
     categoria: "Accesorios",
     nombre: "Gafas de Sol Aviador",
     stock: 39,
@@ -75,17 +75,18 @@ const productos = [
     destacado: false,
   },
   {
-    // 8
+    // 7
     categoria: "Accesorios",
     nombre: "Cinturón Cuero Negro",
     stock: 9,
     sku: "AA02-11",
     precio: 45.0,
-    imagen_url: "./css/images/zapatilla.jpg",
+    imagen_url:
+      "https://belenkacdn.vshcdn.net/media/2024/08/7/6/pansky-opasok-be-lenka-essentials-leather-black-76818-size-medium-v-1.png",
     destacado: false,
   },
   {
-    // 9
+    // 8
     categoria: "Electrónica",
     nombre: "Smartwatch Active Pro",
     stock: 39,
@@ -96,7 +97,7 @@ const productos = [
     destacado: false,
   },
   {
-    // 10
+    // 9
     categoria: "Electrónica",
     nombre: "Audifonos Bluetooth Xtreme",
     stock: 34,
@@ -106,53 +107,58 @@ const productos = [
     destacado: true,
   },
   {
-    // 11
+    // 10
     categoria: "Ropa",
     nombre: "Chaqueta Denim Classic",
     stock: 39,
     sku: "RR01-14",
     precio: 65.0,
-    imagen_url: "./css/images/zapatilla.jpg",
+    imagen_url:
+      "https://cdn-images.farfetch-contents.com/20/48/85/09/20488509_50540258_600.jpg",
     destacado: false,
   },
   {
-    // 12
+    // 11
     categoria: "Ropa",
     nombre: "Sudadera Capucha Oversize",
     stock: 39,
     sku: "RR02-15",
     precio: 55.0,
-    imagen_url: "./css/images/zapatilla.jpg",
+    imagen_url:
+      "https://kokohai.com/wp-content/uploads/2025/09/sudadera-oversize.png",
     destacado: false,
   },
   {
-    // 13
+    // 12
     categoria: "Hogar",
     nombre: "Lámpara de Mesa Modern",
     stock: 39,
     sku: "HH02-17",
     precio: 110.0,
-    imagen_url: "./css/images/zapatilla.jpg",
+    imagen_url:
+      "https://png.pngtree.com/png-clipart/20250419/original/pngtree-modern-brushed-steel-table-lamp-with-white-fabric-shade-png-image_20739725.png",
     destacado: false,
   },
   {
-    // 14
+    // 13
     categoria: "Deportes",
     nombre: "Balón de Fútbol Pro",
     stock: 64,
     sku: "DD01-18",
     precio: 40.0,
-    imagen_url: "./css/images/zapatilla.jpg",
+    imagen_url:
+      "https://clubcompetitions-shop.com/cdn/shop/files/1_253a7daa-599c-411a-ac89-d9fa22b247eb_1200x.png?v=1695129525",
     destacado: false,
   },
   {
-    // 15
+    // 14
     categoria: "Joyeria",
     nombre: "Collar Plata Esterlina",
     stock: 12,
     sku: "JJ02-20",
     precio: 150.0,
-    imagen_url: "./css/images/zapatilla.jpg",
+    imagen_url:
+      "https://sobling.jewelry/wp-content/uploads/2023/07/UMCHO-925-Sterling-Silver-Ladies-Necklace-Set-with-Natural-Aquamarine-Snowflake-Pendant-Simple-Light-Luxury-High-600x600.png",
     destacado: false,
   },
 ];
