@@ -12,7 +12,7 @@
     </div>
     <section>
       <div class="container">
-        <form action="filtrar_producto">
+        <form id="filtrar_producto">
           <h2>Filtros de Busqueda</h2>
           <div class="filtros">
             <div class="filtro_nombre">
@@ -24,12 +24,12 @@
               />
             </div>
             <div class="filtro_precio">
-              <label for="r-precio">Rango precios</label>
+              <label>Rango precios</label>
               <input
                 type="number"
                 min="0.00"
                 step="0.01"
-                name="r-precio_min"
+                name="r_precio_min"
                 placeholder="100"
               />
               -
@@ -37,12 +37,12 @@
                 type="number"
                 min="0.00"
                 step="0.01"
-                name="r-precio_max"
+                name="r_precio_max"
                 placeholder="700"
               />
             </div>
           </div>
-          <button type="button">Filtrar</button>
+          <button type="submit" class="filtrar">Filtrar</button>
         </form>
       </div>
     </section>
@@ -51,7 +51,7 @@
         <h2>Productos Destacados</h2>
         <div class="productos">
           <article class="caja_producto">
-            <div class="destacado"><i class="fa-solid fa-star"></i></div>
+            <div class="destacado"><button class="destacar"><i class="fa-solid fa-star"></button></i></div>
             <div class="imagen"></div>
             <ul>
               <li class="gris">Categoria</li>
@@ -61,7 +61,7 @@
             </ul>
           </article>
           <article class="caja_producto">
-            <div class="destacado fav"><i class="fa-solid fa-star"></i></div>
+            <div class="destacado fav"><button class="destacar"><i class="fa-solid fa-star"></i></button></div>
             <img src="./css/images/zapatilla.jpg" alt="Zapatilla deportiva" />
             <ul>
               <li class="gris">Calzado</li>
@@ -84,8 +84,18 @@
       <div class="container">
         <h2>Todos los Productos</h2>
         <div class="productos">
+           <article class="caja_producto">
+            <div class="destacado fav"><button class="destacar"><i class="fa-solid fa-star"></i></button></div>
+            <img src="./css/images/zapatilla.jpg" alt="Zapatilla deportiva" />
+            <ul>
+              <li class="gris">Calzado</li>
+              <li class="nombre">Zapatilla Deportiva X-run</li>
+              <li class="gris">SKU: ZR 4583</li>
+              <li class="precio">$ 120.00</li>
+            </ul>
+          </article>
           <article class="caja_producto">
-            <div class="destacado fav"><i class="fa-solid fa-star"></i></div>
+            <div class="destacado"><button class="destacar"><i class="fa-solid fa-star"></i></button></div>
             <img src="./css/images/mochila_cuero.jpg" alt="Mochila de Cuero" />
             <ul>
               <li class="gris">Categoria</li>
