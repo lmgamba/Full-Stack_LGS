@@ -1,14 +1,3 @@
-/* <article class="caja_producto">
-            <div class="fav">X</div>
-            <img src="./css/images/zapatilla.jpg" alt="Zapatilla deportiva" />
-            <ul>
-              <il class="gris">Calzado</il>
-              <il class="nombre">Zapatilla Deportiva X-run</il>
-              <il class="gris">SKU: ZR 4583</il>
-              <il class="precio">$ 120.00</il>
-            </ul>
-</article> */
-
 // cargo lugar donde quiero pintar los productos
 const seccionDestacados = document.querySelector("#prod_destacados .productos");
 const seccionAllProd = document.querySelector("#prod_all .productos");
@@ -49,7 +38,7 @@ function pintarProducto(producto, dom) {
   //Contenido
   boton_dest.innerHTML = `<i class="fa-solid fa-star"></i>`;
   boton_dest.addEventListener("click", destacar);
-  imagen.src = producto.imagen_url; // imagen por defecto
+  imagen.src = producto.imagen_url;
   imagen.alt = producto.nombre;
   li_cat.textContent = producto.categoria;
   li_nombre.textContent = producto.nombre;
@@ -62,21 +51,35 @@ function pintarProducto(producto, dom) {
   dom.appendChild(article);
 }
 
-function pintarTodosProductos(ArrayProductos, dom_all, dom_destacado) {
-  //Limpiar html
-  seccionDestacados.innerHTML = "";
-  seccionAllProd.innerHTML = "";
-  for (let producto of ArrayProductos) {
-    pintarProducto(producto, dom_all);
-    if (producto.destacado == true) {
-      pintarProducto(producto, dom_destacado);
-    }
+function pintarTodosProductos(ArrayProductos, dom_all, dom_destacado, caso) {
+  switch (caso) {
+    case "all_products": // usar en caso que se quiera re-pintar toda la pagina
+      //Limpiar html
+      dom_all.innerHTML = "";
+      dom_destacado.innerHTML = "";
+      for (let producto of ArrayProductos) {
+        pintarProducto(producto, dom_all);
+        if (producto.destacado == true) {
+          pintarProducto(producto, dom_destacado);
+        }
+      }
+    case "sin_destacados": // usar si no se quieren sobreescribir los destacados
+      //Limpiar html
+      dom_all.innerHTML = "";
+      for (let producto of ArrayProductos) {
+        pintarProducto(producto, dom_all);
+      }
   }
 }
 
-pintarTodosProductos(productos, seccionAllProd, seccionDestacados);
+pintarTodosProductos(
+  productos,
+  seccionAllProd,
+  seccionDestacados,
+  "all_products"
+);
 
-// parte 2
+// parte 2 : formulario
 
 const form = document.querySelector("#filtrar_producto");
 
@@ -116,19 +119,20 @@ function filtrar_producto(filtros_prod) {
       producto.precio < filtros_prod.precio_max
   );
 
-  //Limpiar html
-  seccionDestacados.innerHTML = "";
-  seccionAllProd.innerHTML = "";
-
-  // mostrar solo productos filtrados
-  pintarTodosProductos(prod_filtrados, seccionAllProd, seccionDestacados);
+  // mostrar solo productos filtrados SIN TOCAR LOS DESTACADOS
+  pintarTodosProductos(
+    prod_filtrados,
+    seccionAllProd,
+    seccionDestacados,
+    "sin_destacados"
+  );
 }
 
 form.addEventListener("submit", obtenerDatosForm);
 
-// parte 3 : funcionamiento del boton destacado ?
-// si  clic -> producto.destacado != producto.destacado
-//hay que actualizar el arreglo de json
+// parte 3 : funcionamiento del boton destacado
+// cambiar estado destacado si  clic -> producto.destacado = !producto.destacado
+//hay que actualizar el arreglo de json?
 
 function destacar(event) {
   // 1. buscar en la clase del boton la referencia del producto
@@ -148,5 +152,10 @@ function destacar(event) {
   //productos.push(prod_a_Destacar); //-> sobreescribir objeto en lugar de añadirlo --  es necesario?
 
   //actualizar los productos que se muestran como destacados
-  pintarTodosProductos(productos, seccionAllProd, seccionDestacados);
+  pintarTodosProductos(
+    productos,
+    seccionAllProd,
+    seccionDestacados,
+    "all_products"
+  );
 }
