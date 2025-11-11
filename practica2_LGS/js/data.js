@@ -2,7 +2,7 @@ const productos = [
   {
     // 0
     categoria: "Calzado",
-    nombre: "Zapatilla Deportiva X-run",
+    nombre: "Zapatilla Deportiva X-Run",
     stock: 39,
     sku: "CC01-01",
     precio: 128.0,
@@ -104,7 +104,7 @@ const productos = [
     sku: "EE03-13",
     precio: 120.0,
     imagen_url: "./css/images/headphones.png",
-    destacado: true,
+    destacado: false,
   },
   {
     // 10
@@ -137,7 +137,7 @@ const productos = [
     precio: 110.0,
     imagen_url:
       "https://png.pngtree.com/png-clipart/20250419/original/pngtree-modern-brushed-steel-table-lamp-with-white-fabric-shade-png-image_20739725.png",
-    destacado: false,
+    destacado: true,
   },
   {
     // 13

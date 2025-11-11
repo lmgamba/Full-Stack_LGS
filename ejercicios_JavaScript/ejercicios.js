@@ -103,18 +103,17 @@
 //     ejemplo: si tengo un producto que a mi me cuesta 1000 y quiero ganarle el 50% y pagar el iva
 // 1000 + 500 = 1500 -> 21 % -> 1815
 
-// let costo = Number(prompt("Cuanto te cuesta el producto?"));
+let costo = Number(prompt("Cuanto te cuesta el producto?"));
 
-// let ganancia = Number(prompt("Cuanto te Que porcentaje quieres ganarle?"));
+let ganancia = Number(prompt("Cuanto te Que porcentaje quieres ganarle?"));
 
-// function calculoPVP(costo, ganancia) {
-//   let PVP = costo * 1.21 * (1 + ganancia / 100); //1.21 ES EL IVA DE 21%
-//   document.write(
-//     `<div style="padding: 10px; background-color: bisque; border-radius: 5px;border: 5px solid;">El PVP de tu producto deberia ser ${PVP}</div>`
-//   );
-// }
-
-// calculoPVP(costo, ganancia);
+function calculoPVP(costo, ganancia) {
+  let PVP = costo * 1.21 * (1 + ganancia / 100); //1.21 ES EL IVA DE 21%
+  document.write(
+    `<div style="padding: 10px; background-color: bisque; border-radius: 5px;border: 5px solid;">El PVP de tu producto deberia ser ${PVP}</div>`
+  );
+}
+20;
 
 // 18. Quiero un programa que me permita saber si un numero es primo o no es primo.Un numero es primo si y solo si el numero es divisible por 1 o por si mismo, recorriendo todos los numeros desde el numero dado a hasta 1.
 
@@ -147,38 +146,38 @@
 //     "La ruta natural"
 // "Amor a Roma"
 
-let input = prompt("Dime algo");
+// let input = prompt("Dime algo");
 
-function palindromo(frase) {
-  let len = frase.length - 1;
-  console.log(frase[len - 2]);
-  espalindromo = true;
-  for (i = 0; i < len; i++) {
-    //   console.log(frase[i]);
-    if (frase[i] !== " ") {
-      // console.log("NO es espacio" + i);
-      if (frase[i] != frase[len - i]) {
-        console.log(`Comparando ${frase[i]} vesrsus ${frase[len - i]}`);
-        espalindromo = false;
-        break;
-      }
-    }
-  }
+// function palindromo(frase) {
+//   let len = frase.length - 1;
+//   console.log(frase[len - 2]);
+//   espalindromo = true;
+//   for (i = 0; i < len; i++) {
+//     //   console.log(frase[i]);
+//     if (frase[i] !== " ") {
+//       // console.log("NO es espacio" + i);
+//       if (frase[i] != frase[len - i]) {
+//         console.log(`Comparando ${frase[i]} vesrsus ${frase[len - i]}`);
+//         espalindromo = false;
+//         break;
+//       }
+//     }
+//   }
 
-  return espalindromo;
-}
+//   return espalindromo;
+// }
 
-resultado = palindromo(input);
+// resultado = palindromo(input);
 
-document.write(
-  `<div style="padding: 10px; width: 50%;margin-bottom:15px;5"> La frase " ${input} " es palindromo? </div>
-    <span style="padding: 10px; width: 50%; background-color: bisque; margin 15px;
-     border-radius: 5px;border: 5px solid;font-size: larger;
-        font-weight: bold;"> ${resultado}  </span>`
-);
+// document.write(
+//   `<div style="padding: 10px; width: 50%;margin-bottom:15px;5"> La frase " ${input} " es palindromo? </div>
+//     <span style="padding: 10px; width: 50%; background-color: bisque; margin 15px;
+//      border-radius: 5px;border: 5px solid;font-size: larger;
+//         font-weight: bold;"> ${resultado}  </span>`
+// );
 
-if (typeof input == "string") {
-  console.log(palindromo(input));
-} else {
-  alert("Por favor ingresa un texto valido");
-}
+// if (typeof input == "string") {
+//   console.log(palindromo(input));
+// } else {
+//   alert("Por favor ingresa un texto valido");
+// }

@@ -80,7 +80,7 @@ pintarTodosProductos(
 );
 
 // parte 2 : formulario
-
+// select form by id
 const form = document.querySelector("#filtrar_producto");
 
 function obtenerDatosForm(event) {

@@ -1,8 +1,10 @@
 @import url(reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"); /*importa iconos*/
 
 body {
   background-color: #f6f7f8;
+  font-family: Monserrat, sans-serif;
 }
 
 .container {
@@ -18,6 +20,10 @@ h1 {
   margin-top: 10px;
   font-size: 190%;
   font-weight: bolder;
+  display: inline-block;
+  i {
+    color: #005ab8;
+  }
 }
 
 section {
@@ -106,7 +112,7 @@ button:hover {
 }
 
 .caja_producto {
-  width: 230px;
+  width: calc(25% - 43px);
   height: 300px;
   padding: 10px;
   border: 2px solid lightgray;
@@ -128,12 +134,10 @@ button:hover {
       border: none;
       i {
         color: lightgray;
-        font-size: 130%;
       }
       &:hover {
         i {
           color: gray;
-          font-size: 130%;
         }
       }
     }
@@ -165,17 +169,47 @@ button:hover {
   }
   .gris {
     color: gray;
-    font-size: 100%;
+    font-size: 90%;
   }
 
   .nombre {
     font-weight: bold;
-    font-size: 120%;
+    font-size: 110%;
   }
 
   .precio {
     color: #005ab8;
     font-size: 150%;
     font-weight: bold;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (width < 770px) {
+  section {
+    width: 97%;
+    margin: 10px auto;
+    padding: 10px;
+
+    .caja_producto {
+      width: calc(50% - 43px);
+      height: 220px;
+
+      .gris {
+        font-size: 60%;
+      }
+
+      .nombre {
+        font-size: 80%;
+      }
+
+      .precio {
+        font-size: 100%;
+      }
+    }
+  }
+  .container {
+    max-width: 400px;
   }
 }
