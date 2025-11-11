@@ -64,7 +64,7 @@ function pintarTodosProductos(ArrayProductos, dom_all, dom_destacado, caso) {
         }
       }
     case "sin_destacados": // usar si no se quieren sobreescribir los destacados
-      //Limpiar html
+      //Limpiar html, solo all
       dom_all.innerHTML = "";
       for (let producto of ArrayProductos) {
         pintarProducto(producto, dom_all);
@@ -92,15 +92,13 @@ function obtenerDatosForm(event) {
     precio_max: Number(event.target.r_precio_max.value),
   };
 
-  console.log(filtros_prod);
-
   // llama a la funcion que filtra los productos que cumplen la  busqueda:
   filtrar_producto(filtros_prod);
 
   event.target.reset();
 }
 
-////////////////////
+//filtro de productos
 
 function filtrar_producto(filtros_prod) {
   if (filtros_prod.precio_max === 0) {
@@ -108,7 +106,7 @@ function filtrar_producto(filtros_prod) {
   }
 
   //productos resultantes de la busqueda con los filtros recibidos
-  //filter: (producto) =>  (nombre filtro y producto en lowercase es igual?) && (pmin < precio <pmax?)
+  //filter: (producto) =>  (nombre filtro y producto en lowercase es igual) && (pmin < precio <pmax)
 
   let prod_filtrados = productos.filter(
     (producto) =>
@@ -126,13 +124,18 @@ function filtrar_producto(filtros_prod) {
     seccionDestacados,
     "sin_destacados"
   );
+
+  // mensaje para informar al usuario que no hay productos que cumplan con ese filtro
+  if (prod_filtrados[0] === undefined) {
+    seccionAllProd.innerHTML = `<span style="font-style: italic; color: gray;" > No hay productos que cumplan con la búsqueda, intenta con otro filtro </span>`;
+  }
 }
 
 form.addEventListener("submit", obtenerDatosForm);
 
-// parte 3 : funcionamiento del boton destacado
+// parte (?) : funcionamiento del boton destacado
 // cambiar estado destacado si  clic -> producto.destacado = !producto.destacado
-//hay que actualizar el arreglo de json?
+//actualizar el arreglo de json?
 
 function destacar(event) {
   // 1. buscar en la clase del boton la referencia del producto
@@ -148,7 +151,6 @@ function destacar(event) {
 
   prod_a_Destacar.destacado = !prod_a_Destacar.destacado;
 
-  console.log(prod_a_Destacar.destacado);
   //productos.push(prod_a_Destacar); //-> sobreescribir objeto en lugar de añadirlo --  es necesario?
 
   //actualizar los productos que se muestran como destacados

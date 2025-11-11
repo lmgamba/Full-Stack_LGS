@@ -134,6 +134,7 @@ button:hover {
       border: none;
       i {
         color: lightgray;
+        font-size: 170%;
       }
       &:hover {
         i {
