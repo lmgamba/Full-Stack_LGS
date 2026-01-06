@@ -40,5 +40,11 @@ async def register(user: UserCreate):
     return await user_controller.registrar(user)
 
 @router.delete('/{user_id}', status_code= 200)
-async def delete_users_by_id(user_id: str):
+async def delete_user_by_id(user_id: str):
     return await user_controller.borrar_usuario_by_id(int(user_id))
+
+
+# update  con PUT
+@router.put('/{user_id}', status_code= 200)
+async def update_user_by_id(user_id: str, user: User):
+    return await user_controller.actualizar_usuario_by_id(int(user_id), user)
