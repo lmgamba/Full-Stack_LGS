@@ -48,7 +48,7 @@ async def registrar(user: UserCreate):
     try:
         conn= await get_connection()
         async with conn.cursor(aio.DictCursor) as cursor:
-            #TODO: hashear password
+            #TODO: hashear password = hecho en auth controller
             
             #se lanza la consulta
             await cursor.execute("INSERT INTO 202509_shop.users (name,surname,age,mail,status,password,rol) VALUES (%s,%s,%s,%s,%s,%s,%s)", (user.name, user.surname, user.age, user.mail, user.status, user.password, user.rol))
@@ -100,6 +100,7 @@ async def actualizar_usuario_by_id(user_id, user: User):
             await cursor.execute("UPDATE users SET name=%s, surname=%s, age=%s, mail=%s, status=%s, password=%s, rol=%s WHERE id=%s", ( user.name, user.surname, user.age, user.mail, user.status, user.password, user.rol,user.id))
 
             await conn.commit() #el commit no devuelve nada, solo hace el registro
+            usuario = await obtener_usuario_by_id(user_id)
             return {"msg": "Usuario actualizado correctamente", "item":usuario}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error:{str(e)}")

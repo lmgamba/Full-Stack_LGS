@@ -1,3 +1,4 @@
+-- ###############################33--------------
 INSERT INTO
     `202509_shop`.`users` (
         name,
@@ -209,3 +210,224 @@ VALUES (
         '$2y$10$T0U1V2W3X4Y5Z6A7B8C9D',
         'user'
     );
+
+-- ######################
+INSERT INTO
+    `202509_SHOP`.`products` (
+        `title`,
+        `price`,
+        `quantity`,
+        `status`
+    )
+VALUES
+    -- Electrónicos
+    (
+        'iPhone 15 Pro 256GB',
+        1199.99,
+        45,
+        1
+    ),
+    (
+        'Samsung Galaxy S24 Ultra',
+        1299.99,
+        32,
+        1
+    ),
+    (
+        'MacBook Air M3 13"',
+        1099.99,
+        28,
+        1
+    ),
+    (
+        'Sony WH-1000XM5 Auriculares',
+        349.99,
+        67,
+        1
+    ),
+    (
+        'Apple Watch Series 9',
+        399.99,
+        53,
+        1
+    ),
+    (
+        'iPad Air 11" 128GB',
+        749.99,
+        41,
+        1
+    ),
+    (
+        'Bose QuietComfort 45',
+        329.99,
+        38,
+        0
+    ),
+    (
+        'Logitech MX Master 3S Ratón',
+        99.99,
+        89,
+        1
+    ),
+
+-- Ropa y Moda
+(
+    'Chaqueta Denim Levi\'s 511',
+    79.99,
+    120,
+    1
+),
+(
+    'Zapatillas Nike Air Max 270',
+    129.99,
+    75,
+    1
+),
+(
+    'Camiseta Básica Algodón Pack x3',
+    29.99,
+    250,
+    1
+),
+(
+    'Reloj Casio G-Shock GA-2100',
+    99.99,
+    60,
+    1
+),
+(
+    'Bolso Bandolera Cuero Sintético',
+    49.99,
+    85,
+    1
+),
+(
+    'Gafas de Sol Ray-Ban Aviator',
+    159.99,
+    42,
+    1
+),
+(
+    'Chándal Adidas Tiro 23',
+    89.99,
+    55,
+    0
+),
+
+-- Hogar y Cocina
+(
+    'Robot Aspirador Xiaomi Mi Robot',
+    299.99,
+    30,
+    1
+),
+(
+    'Freidora de Aire Philips XXL',
+    149.99,
+    62,
+    1
+),
+(
+    'Juego de Sartenes Antiadherentes',
+    79.99,
+    95,
+    1
+),
+(
+    'Máquina de Café Nespresso Vertuo',
+    199.99,
+    40,
+    1
+),
+(
+    'Altavoz Inteligente Amazon Echo',
+    99.99,
+    110,
+    1
+),
+
+-- Deportes y Aire Libre
+(
+    'Bicicleta Montaña Trek Marlin 5',
+    649.99,
+    18,
+    1
+),
+(
+    'Zapatillas Running Asics Gel-Nimbus',
+    139.99,
+    47,
+    1
+),
+(
+    'Tienda de Campaña 4 Personas',
+    199.99,
+    25,
+    1
+),
+(
+    'Mochila Trekking 40L Impermeable',
+    79.99,
+    70,
+    1
+),
+
+-- Libros y Oficina
+(
+    'Tableta Gráfica Wacom Intuos',
+    89.99,
+    65,
+    1
+),
+(
+    'Kindle Paperwhite 11ª Gen',
+    139.99,
+    88,
+    1
+),
+(
+    'Monitor Dell 27" 4K U2723QE',
+    699.99,
+    22,
+    1
+),
+
+-- Belleza y Cuidado
+(
+    'Secador Dyson Supersonic',
+    429.99,
+    33,
+    1
+),
+(
+    'Cepillo Dental Eléctrico Oral-B',
+    89.99,
+    140,
+    1
+),
+(
+    'Set Maquillaje Profesional 24 colores',
+    59.99,
+    105,
+    0
+),
+
+-- Videojuegos
+(
+    'PlayStation 5 Edición Digital',
+    399.99,
+    15,
+    1
+),
+(
+    'Nintendo Switch OLED',
+    349.99,
+    27,
+    1
+),
+(
+    'Xbox Series X 1TB',
+    499.99,
+    19,
+    1
+);

@@ -1,25 +1,23 @@
 @hostname = http://localhost:8000
+@tabla = products
 
-GET {{hostname}}/users/5
+GET {{hostname}}/{{tabla}}/5
 
 ###
 
 #version basica
-GET {{hostname}}/users/filter/edad?agemin=30&agemax=39
+GET {{hostname}}/{{tabla}}/filter/precio?pricemin=20&pricemax=70
 
 ###
 
-POST {{hostname}}/users/register
+POST {{hostname}}/{{tabla}}/register
 Content-Type: application/json
 
 {
-    "name": "Moses",
-    "surname": "Giron",
-    "age": 42,
-    "mail": "c@gmail.com",
-    "status": 1,
-    "password": "$2y$10$B2c3D4e5F6g7H8i9J0k1L",
-    "rol": "user"
+    "title": "Mouse Gamer",
+    "price": 149.98,
+    "quantity": 57,
+    "status": 1
   }
 
 
