@@ -86,8 +86,13 @@ async def actualizar_usuario_by_id(user_id, user: User):
     #para verificar que el usuario enviado en el formulario es realmente el mismo que se busca actualizar
     if user.id != user_id:
         raise HTTPException(status_code= 400, detail= "El id no coincide")
-    try: 
     
+    usuario = await obtener_usuario_by_id(user_id)
+    if usuario is None:
+        raise HTTPException(status_code= 404, detail= "Usuario no encontrado")
+    
+    
+    try:     
         conn= await get_connection()
         #abrir sql para lanzar queries
         async with conn.cursor(aio.DictCursor) as cursor:
@@ -95,7 +100,6 @@ async def actualizar_usuario_by_id(user_id, user: User):
             await cursor.execute("UPDATE users SET name=%s, surname=%s, age=%s, mail=%s, status=%s, password=%s, rol=%s WHERE id=%s", ( user.name, user.surname, user.age, user.mail, user.status, user.password, user.rol,user.id))
 
             await conn.commit() #el commit no devuelve nada, solo hace el registro
-            usuario = await obtener_usuario_by_id(user_id)
             return {"msg": "Usuario actualizado correctamente", "item":usuario}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error:{str(e)}")

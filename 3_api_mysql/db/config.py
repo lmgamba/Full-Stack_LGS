@@ -1,12 +1,19 @@
 import aiomysql
 
+#esta libreria "os" permite leer ficheros fisicos
+import os
+#esta libreria "os" permite leer ficheros.env
+from dotenv import load_dotenv
+
+load_dotenv()
+
 async def get_connection():
     return await aiomysql.connect(
-        host="172.22.224.1",
-        port=3306,
-        user="wsl_root",
-        password="Targaryen*27",
-        db="202509_shop"
+        host=os.getenv("MYSQL_HOST"),
+        port=int(os.getenv("MYSQL_PORT")),
+        user=os.getenv("MYSQL_USER"),
+        password=os.getenv("MYSQL_PASSWORD"),
+        db=os.getenv("MYSQL_DATABASE"),
     )
 
     

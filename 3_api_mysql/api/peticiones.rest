@@ -1,6 +1,6 @@
 @hostname = http://localhost:8000
 
-GET {{hostname}}/users/5
+GET {{hostname}}/users/4
 
 ###
 
@@ -17,6 +17,23 @@ Content-Type: application/json
     "surname": "Giron",
     "age": 42,
     "mail": "c@gmail.com",
+    "status": 1,
+    "password": "$2y$10$B2c3D4e5F6g7H8i9J0k1L",
+    "rol": "user"
+  }
+
+
+###
+
+PUT {{hostname}}/users/25
+Content-Type: application/json
+
+{
+   "id": "25",
+    "name": "Mario",
+    "surname": "Giron",
+    "age": 42,
+    "mail": "mario@gmail.com",
     "status": 1,
     "password": "$2y$10$B2c3D4e5F6g7H8i9J0k1L",
     "rol": "user"
