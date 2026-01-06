@@ -1,0 +1,82 @@
+import aiomysql as aio
+from db.config import *
+from fastapi import HTTPException
+from models.user_model import *
+
+
+#AQUI SE CONECTA A LA DATABASE
+
+async def obtener_usuario_by_id(user_id):
+    try:
+        conn= await get_connection()
+        #abrir sql para lanzar queries
+        async with conn.cursor(aio.DictCursor) as cursor:
+            #se lanza la consulta
+            await cursor.execute("SELECT * FROM users WHERE id=%s",(user_id,))
+            user=await cursor.fetchone()
+            return user
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error:{str(e)}")
+    finally:
+        conn.close()
+        
+        
+#obtener usuarios entre un rango de edades
+
+async def obtener_usuarios_by_age(agemin,agemax):
+    
+    if agemin > agemax:
+        raise   HTTPException(status_code=400, detail="La edad min no puede ser mayor a la maxima")
+    
+    try:
+        conn= await get_connection()
+        #abrir sql para lanzar queries
+        async with conn.cursor(aio.DictCursor) as cursor:
+            #se lanza la consulta
+            await cursor.execute("SELECT * FROM users WHERE users.age BETWEEN %s AND %s ",(agemin,agemax))
+            res=await cursor.fetchall()
+            if len(res) != 0:
+                return res
+            else:
+                raise   HTTPException(status_code=404, detail="No se encontraron usuarios entre esas edades")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error:{str(e)}")
+    finally:
+        conn.close()
+        
+async def registrar(user: UserCreate):
+    try:
+        conn= await get_connection()
+        async with conn.cursor(aio.DictCursor) as cursor:
+            #TODO: hashear password
+            
+            #se lanza la consulta
+            await cursor.execute("INSERT INTO 202509_shop.users (name,surname,age,mail,status,password,rol) VALUES (%s,%s,%s,%s,%s,%s,%s)", (user.name, user.surname, user.age, user.mail, user.status, user.password, user.rol))
+
+            await conn.commit() #el commit no devuelve nada, solo hace el registro
+            new_id = cursor.lastrowid
+            new_user= await obtener_usuario_by_id(new_id)
+            return {"msg": "Usuario registrado correctamente", "item":new_user}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error:{str(e)}")
+    finally:
+        conn.close()
+        
+async def borrar_usuario_by_id(user_id:int):
+    user= await obtener_usuario_by_id(user_id)
+    if user is not None:
+        try:
+            conn= await get_connection()
+            async with conn.cursor(aio.DictCursor) as cursor:
+            #se lanza la consulta
+                await cursor.execute("DELETE FROM users WHERE id=%s",(user_id,))
+                await conn.commit()
+            return {"msg": f'Usuario con id {user_id} eliminado con exito'}
+        
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f'Error: {str(e)}')
+        finally:
+            conn.close()
+    else:
+        raise HTTPException(status_code=404, detail="El ususario que intentas eliminar no existe")
+

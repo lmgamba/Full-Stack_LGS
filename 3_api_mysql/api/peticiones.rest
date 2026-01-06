@@ -1,0 +1,23 @@
+@hostname = http://localhost:8000
+
+GET {{hostname}}/users/5
+
+###
+
+#version basica
+GET {{hostname}}/users/filter/edad?agemin=30&agemax=39
+
+###
+
+POST {{hostname}}/users/register
+Content-Type: application/json
+
+{
+    "name": "Mosies",
+    "surname": "Giron",
+    "age": 42,
+    "mail": "c@gmail.com",
+    "status": 1,
+    "password": "$2y$10$B2c3D4e5F6g7H8i9J0k1L",
+    "rol": "user"
+  }
