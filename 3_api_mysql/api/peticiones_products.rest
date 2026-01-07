@@ -1,13 +1,22 @@
 @hostname = http://localhost:8000
 @tabla = products
 
-GET {{hostname}}/{{tabla}}/5
+GET {{hostname}}/{{tabla}}/5 
+#->OK
 
 ###
 
 #version basica
 GET {{hostname}}/{{tabla}}/filter/precio?pricemin=20&pricemax=70
+#->OK
 
+###
+GET {{hostname}}/{{tabla}}/filter/status?product_status=0
+#->OK
+###
+
+GET {{hostname}}/{{tabla}}/filter/title?in_title=cam
+#->OK
 ###
 
 POST {{hostname}}/{{tabla}}/register
@@ -16,45 +25,26 @@ Content-Type: application/json
 {
     "title": "Mouse Gamer",
     "price": 149.98,
-    "quantity": 57,
+    "quantity": 94,
     "status": 1
   }
 
+  #->OK
+
 
 ###
 
-PUT {{hostname}}/users/24
+PUT {{hostname}}/{{tabla}}/34
 Content-Type: application/json
 
 {
-   "id": "24",
-    "name": "Moises",
-    "surname": "Perez",
-    "age": 34,
-    "mail": "moises@gmail.com",
-    "status": 1,
-    "password": "$2y$10$B2c3D4e5F6g7H8i9J0k1L",
-    "rol": "user"
-  }
+    "id":34,
+    "title": "Mouse Gamer",
+    "price": 149.98,
+    "quantity": 98,
+    "status": 1
+}
 
+# ->OK
 
 ###
-
-  #comienzo auth
-@ruta = auth
-  ##
-
-###
-
-POST {{hostname}}/{{ruta}}/register
-Content-Type: application/json
-
-{
-    "name": "Pepito",
-    "surname": "Pérez",
-    "age": 21,
-    "mail": "pepe@gmail.com",
-    "status": 1,
-    "password": "1234",
-    "rol": "user"
-  }
