@@ -1,8 +1,7 @@
-import aiomysql as aio
 from db.config import *
-from fastapi import HTTPException
+from fastapi import HTTPException , Depends, Path
 from models.user_model import *
-
+import aiomysql as aio
 
 #AQUI SE CONECTA A LA DATABASE
 

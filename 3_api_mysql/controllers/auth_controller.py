@@ -6,6 +6,7 @@ from core.security import *
 from controllers.user_controller import obtener_usuario_by_id
 
 
+
 async def registrar(user: UserCreate):
     try:
         conn= await get_connection()
@@ -24,3 +25,30 @@ async def registrar(user: UserCreate):
         raise HTTPException(status_code=500, detail=f"Error:{str(e)}")
     finally:
         conn.close()
+        
+        
+async def login(user_login: UserLogin):
+    try:
+        conn= await get_connection()
+        async with conn.cursor(aio.DictCursor) as cursor:
+            #se lanza la consulta
+            await cursor.execute("SELECT * FROM users WHERE mail=%s",(user_login.mail,))
+            usuario= await cursor.fetchone()
+            if not usuario:
+                raise HTTPException(status_code=404, detail='Usuario o password incorreto')
+            if not verify_password(user_login.password,usuario['password']):
+                raise HTTPException(status_code=404, detail='Usuario o password incorreto')
+        
+        token_data={
+            "id": usuario['id'],
+            "rol": usuario['rol']
+        }
+        
+        token=create_token(token_data)
+        print(decode_token(token))
+        return {"msg": "login correctamente", "item":token}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error:{str(e)}")
+    finally:
+        conn.close()      
+        

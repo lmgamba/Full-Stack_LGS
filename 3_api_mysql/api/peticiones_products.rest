@@ -17,6 +17,13 @@ GET {{hostname}}/{{tabla}}/filter/status?product_status=0
 
 GET {{hostname}}/{{tabla}}/filter/title?in_title=cam
 #->OK
+
+
+###
+
+GET {{hostname}}/{{tabla}}/filter/cantidad?quantmin=10&quantmax=30
+#->OK
+
 ###
 
 POST {{hostname}}/{{tabla}}/register

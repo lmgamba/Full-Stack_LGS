@@ -29,7 +29,10 @@ async def get_products_by_price(pricemin: int,pricemax: int):
 async def get_products_by_price(in_title: str):
     return await product_controller.obtener_productos_by_title(in_title)
 
-
+## CANTIDAD 
+@router.get('/filter/cantidad', status_code= 200)
+async def get_products_by_price(quantmin: int,quantmax: int):
+    return await product_controller.obtener_productos_by_quantity(quantmin,quantmax)
 
 
 ################## CREATE ######################

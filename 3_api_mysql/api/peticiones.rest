@@ -3,6 +3,11 @@
 GET {{hostname}}/users/5
 
 ###
+GET {{hostname}}/users/25
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInJvbCI6ImFkbWluIiwiZXhwaXJlIjoxNzY5MDE0MzE5fQ.AxExbJKTBymRU0PkR9E8IQQAfbqKoUld8H0bGycW1vY
+
+###
 
 #version basica
 GET {{hostname}}/users/filter/edad?agemin=30&agemax=39
@@ -44,7 +49,7 @@ Content-Type: application/json
 
   #comienzo auth
 @ruta = auth
-  ##
+
 
 ###
 
@@ -59,4 +64,14 @@ Content-Type: application/json
     "status": 1,
     "password": "1234",
     "rol": "user"
+  }
+
+###
+
+POST {{hostname}}/{{ruta}}/login
+Content-Type: application/json
+
+{
+    "mail": "juanan@gmail.com",
+    "password": "1234"
   }

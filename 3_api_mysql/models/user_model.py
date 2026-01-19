@@ -22,3 +22,7 @@ class UserCreate(BaseModel):
     status:int
     password:str
     rol:str
+    
+class UserLogin(BaseModel):
+    mail:str
+    password:str

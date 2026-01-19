@@ -84,6 +84,29 @@ async def obtener_productos_by_status(product_status:int):
         conn.close()
 
 
+#### obtener productos entre un rango de precios #####
+
+async def obtener_productos_by_quantity(quantmin,quantmax):
+    
+    if quantmin > quantmax:
+        raise   HTTPException(status_code=400, detail="La cantidad min no puede ser mayor a la maxima")
+    
+    try:
+        conn= await get_connection()
+        #abrir sql para lanzar queries
+        async with conn.cursor(aio.DictCursor) as cursor:
+            #se lanza la consulta
+            await cursor.execute("SELECT * FROM products WHERE products.quantity BETWEEN %s AND %s ",(quantmin,quantmax))
+            res= await cursor.fetchall()
+            if len(res) != 0:
+                return res
+            else:
+                raise   HTTPException(status_code=404, detail="No se encontraron productos con esas cantidades")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error:{str(e)}")
+    finally:
+        conn.close()
+
 #################################################    
 ################## CREATE ######################
 async def registrar(product: productCreate):
