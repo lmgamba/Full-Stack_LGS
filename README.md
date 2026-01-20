@@ -9,9 +9,24 @@ A comprehensive collection of projects developed during my Full-Stack Developer 
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
+
+## 🎯 Projects Overview
+
+
+## 📊 Project Overview
+
+| Project | Technologies | Key Highlights |
+|---------|--------------|----------------|
+| **🛒 E-commerce with Testing** | [![My Skills](https://skillicons.dev/icons?i=js,jest,html,css)](https://skillicons.dev) | Unit testing, Filter logic, Clean architecture |
+| **⚡ REST API with FastAPI** | [![My Skills](https://skillicons.dev/icons?i=python,fastapi,mysql)](https://skillicons.dev)  | Full CRUD, Authentication, Database design |
+| **📱 Responsive Landing Page** | [![My Skills](https://skillicons.dev/icons?i=vscode,html,css)](https://skillicons.dev) | Mobile-first, Responsive design |
+| **🅰️ Angular Application** | [![My Skills](https://skillicons.dev/icons?i=nodejs,angular,typescript)](https://skillicons.dev) | Component architecture, RxJS, Full-stack planning |
+
+---
+
 ## 📁 Repository Structure
 ### 🧭 Learning Path Progression
-📦 bootcamp-portfolio/
+📦 full-stack_LGS/
 
 ├── 📂 1_static_front_hamburgueseria/ # Module 1: HTML/CSS Foundations
 
@@ -21,32 +36,39 @@ A comprehensive collection of projects developed during my Full-Stack Developer 
 
 └── 📂 4_angular/ # Module 4: Modern Framework (In Progress)
 
-
-## 🎯 Projects Overview
-
+---
 ### 1. Static Restaurant Website - "Rovers Hamburgers"
 **Folder:** `1_static_front_hamburgueseria/`  
 **Technologies:** HTML5, CSS3, Flexbox, Responsive Design
 
 **Key Features:**
-- Fully responsive design (mobile, tablet, desktop)
-- CSS Flexbox-based system
-- Interactive navigation menu, implementing a hamburger menu for mobile
+**📱 Mobile-First Design** Fully responsive design (mobile, tablet, desktop)
+**🎨 CSS Architecture**  | CSS Flexbox-based system
+**🍔 Interactive Navigation** | Iimplementing a hamburger menu for mobile
 
----
 
-### 2. Interactive E-commerce Product Filter
-**Folder:** `2_e-commerce_front_with_JS/`  
-**Technologies:** JavaScript (ES6+), DOM Manipulation, Local Storage
+## 2. 🛒 Interactive E-commerce with JavaScript Testing
 
-**Key Features:**
-- DOM manipulation and event handling
-- Array methods (filter, map, forEach)
-- Dynamic product rendering from JSON data
-- Real-time filtering by price and category
-- Product filtering and search functionality
-- Clean separation of HTML, CSS, and JavaScript
+**📁 Folder:** `2_e-commerce_front_with_JS/`  
+**🏷️ Status:** ✅ Production Ready  
+**🔧 Technologies:** JavaScript (ES6+), Jest, DOM API, CSS3, HTML5
 
+### 🎯 Key Features
+
+**🔍 Real-time Product Filtering** | Dynamic filtering by price, name, and category  
+**🧪 Unit Testing with Jest** | Comprehensive test suite for business logic  
+**🖼️ Dynamic DOM Rendering** | JavaScript-generated product cards from JSON data   
+**🏗️ Clean Architecture** | Separation of logic (logic.js) and presentation (script.js)  
+**📱 Responsive UI** | CSS Flexbox/Grid for all device sizes  
+
+### 📈 Technical Highlights
+
+```javascript
+// Example of tested business logic
+✅ filtrar_producto() - Filter function with 100% test coverage
+✅ destacar() - Product starring system with edge case handling
+✅ 15+ unit tests covering normal/edge cases
+```
 ---
 
 ### 3. Complete REST API with FastAPI & MySQL
@@ -54,12 +76,12 @@ A comprehensive collection of projects developed during my Full-Stack Developer 
 **Technologies:** Python, FastAPI, MySQL, SQLAlchemy, Pydantic
 
 **Key Features:**
-- Complete CRUD operations for products with RESTful API
-- Input validation with Pydantic
-- Advanced filtering (price ranges, text search)
-- Relational database design (User ↔ Product)
-- Dependencies and Authentication
-- Proper error handling and HTTP status codes
+- Complete CRUD operations for products with RESTful API  
+**✅ Input Validation** |  Pydantic and ModelBase Classes
+- Advanced filtering (price ranges, text search)  
+**📊 Advanced Query System** | Relational database design (User ↔ Product)  
+**🔐 Full Authentication** | Dependencies and Authentication with password hashing
+**:warning:Proper error handling** and HTTP status codes  
 
 ---
 
@@ -116,10 +138,9 @@ uvicorn app.main:app --reload
 
 ### 🔮 :soon: **Next Steps**
 1. Complete Angular module and integrate with existing backend
-2. Add testing to all projects (Jest for frontend, pytest for backend)
+2. Add testing to all projects (Jest done for frontend :white_check_mark: , pytest for backend tbd)
 3. Containerize applications with Docker
 4. Deploy projects to demonstrate live applications
-5.  Complete CRUD operations for products with RESTful API
 
 ### :telephone_receiver: **Contact & Links**
 - GitHub: [![Static Badge](https://img.shields.io/badge/my-github-white)](https://github.com/lmgamba)
