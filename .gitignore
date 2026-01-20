@@ -3,5 +3,3 @@ node_modules/
 .vscode/
 .venv
 3_api_mysql/.env
-3_api_mysql/.venv
-3_api_mysql/_pycache_
