@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, Path
 from controllers import user_controller
 from models.user_model import *
-from core.dependencies import get_current_user, is_admin_or_user
+from core.dependencies import get_current_user, is_admin_or_owner
 
 # solo importamos APIRouter porque este fichero ya nos encontramos en la ruta /users, aqui tengo que montar todas las subrutas a partir de ese elemento.
 
@@ -13,7 +13,7 @@ router = APIRouter()
 ##########VERSION CON AUTENTIFICACION#############
 ## Se pone user=Depends(get_current_user) como otro parametro  para que se ejecute la dependencia y compruebe el token
 @router.get('/{user_id}', status_code= 200)
-async def get_users_by_id(user_id: str, user=Depends(is_admin_or_user)):
+async def get_users_by_id(user_id: str, user=Depends(is_admin_or_owner)):
      return await user_controller.obtener_usuario_by_id(int(user_id))
 ##  -> de esta forma no deja leer el id sin que "seamos " el usuario logeado
 # en peticiones. rest se añade:
