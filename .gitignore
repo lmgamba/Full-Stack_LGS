@@ -1,5 +1,7 @@
 node_modules/
 .DS_Store
 .vscode/
+.venv
 3_api_mysql/.env
+3_api_mysql/.venv
 3_api_mysql/db
