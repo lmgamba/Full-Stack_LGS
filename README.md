@@ -41,10 +41,10 @@ A comprehensive collection of projects developed during my Full-Stack Developer 
 **Folder:** `1_static_front_hamburgueseria/`  
 **Technologies:** HTML5, CSS3, Flexbox, Responsive Design
 
-**Key Features:**
-**📱 Mobile-First Design** Fully responsive design (mobile, tablet, desktop)
-**🎨 CSS Architecture**  | CSS Flexbox-based system
-**🍔 Interactive Navigation** | Iimplementing a hamburger menu for mobile
+**Key Features:**  
+**📱 Mobile-First Design** Fully responsive design (mobile, tablet, desktop)  
+**🎨 CSS Architecture**  | CSS Flexbox-based system  
+**🍔 Interactive Navigation** | Iimplementing a hamburger menu for mobile  
 
 
 ## 2. 🛒 Interactive E-commerce with JavaScript Testing
@@ -76,9 +76,9 @@ A comprehensive collection of projects developed during my Full-Stack Developer 
 **Technologies:** Python, FastAPI, MySQL, SQLAlchemy, Pydantic
 
 **Key Features:**
-- Complete CRUD operations for products with RESTful API  
+**:computer: Complete CRUD** | CRUD operations for products with RESTful API  
 **✅ Input Validation** |  Pydantic and ModelBase Classes
-- Advanced filtering (price ranges, text search)  
+**🔍Advanced Advanced Query System** | Multi-parameter filtering (price ranges, text search)  
 **📊 Advanced Query System** | Relational database design (User ↔ Product)  
 **🔐 Full Authentication** | Dependencies and Authentication with password hashing
 **:warning:Proper error handling** and HTTP status codes  
