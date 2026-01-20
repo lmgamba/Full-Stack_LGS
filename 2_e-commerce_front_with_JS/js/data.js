@@ -162,3 +162,6 @@ const productos = [
     destacado: false,
   },
 ];
+
+// Exporta
+export { productos };

@@ -1,3 +1,7 @@
+//importar logica
+import { filtrar_producto, destacar } from "./logic.js";
+import { productos } from "./data.js";
+
 // cargo lugar donde quiero pintar los productos
 const seccionDestacados = document.querySelector("#prod_destacados .productos");
 const seccionAllProd = document.querySelector("#prod_all .productos");
@@ -37,7 +41,7 @@ function pintarProducto(producto, dom) {
 
   //Contenido
   boton_dest.innerHTML = `<i class="fa-solid fa-star"></i>`;
-  boton_dest.addEventListener("click", destacar);
+  boton_dest.addEventListener("click", actualizar_destacados);
   imagen.src = producto.imagen_url;
   imagen.alt = producto.nombre;
   li_cat.textContent = producto.categoria;
@@ -51,13 +55,18 @@ function pintarProducto(producto, dom) {
   dom.appendChild(article);
 }
 
-function pintarTodosProductos(ArrayProductos, dom_all, dom_destacado, caso) {
+function pintarTodosProductos(
+  productosArray,
+  dom_all,
+  dom_destacado,
+  caso = "sin_destacados",
+) {
   switch (caso) {
     case "all_products": // usar en caso que se quiera re-pintar toda la pagina
       //Limpiar html
       dom_all.innerHTML = "";
       dom_destacado.innerHTML = "";
-      for (let producto of ArrayProductos) {
+      for (let producto of productosArray) {
         pintarProducto(producto, dom_all);
         if (producto.destacado == true) {
           pintarProducto(producto, dom_destacado);
@@ -66,17 +75,19 @@ function pintarTodosProductos(ArrayProductos, dom_all, dom_destacado, caso) {
     case "sin_destacados": // usar si no se quieren sobreescribir los destacados
       //Limpiar html, solo all
       dom_all.innerHTML = "";
-      for (let producto of ArrayProductos) {
+      for (let producto of productos) {
         pintarProducto(producto, dom_all);
       }
   }
 }
 
+// INICIALIZAR EL ARRAY
+let productosCopy = [...productos]; // Copia inicial
 pintarTodosProductos(
-  productos,
+  productosCopy,
   seccionAllProd,
   seccionDestacados,
-  "all_products"
+  "all_products",
 );
 
 // parte 2 : formulario
@@ -93,42 +104,22 @@ function obtenerDatosForm(event) {
   };
 
   // llama a la funcion que filtra los productos que cumplen la  busqueda:
-  filtrar_producto(filtros_prod);
-
-  event.target.reset();
-}
-
-//filtro de productos
-
-function filtrar_producto(filtros_prod) {
-  if (filtros_prod.precio_max === 0) {
-    filtros_prod.precio_max = 999999; //max default, en caso que no se llene el input del precio max
-  }
-
-  //productos resultantes de la busqueda con los filtros recibidos
-  //filter: (producto) =>  (nombre filtro y producto en lowercase es igual) && (pmin < precio <pmax)
-
-  let prod_filtrados = productos.filter(
-    (producto) =>
-      producto.nombre
-        .toLowerCase()
-        .includes(filtros_prod.nombre.toLowerCase()) &&
-      filtros_prod.precio_min < producto.precio &&
-      producto.precio < filtros_prod.precio_max
-  );
-
-  // mostrar solo productos filtrados SIN TOCAR LOS DESTACADOS
-  pintarTodosProductos(
-    prod_filtrados,
-    seccionAllProd,
-    seccionDestacados,
-    "sin_destacados"
-  );
+  let prod_filtrados = filtrar_producto(filtros_prod);
 
   // mensaje para informar al usuario que no hay productos que cumplan con ese filtro
   if (prod_filtrados[0] === undefined) {
     seccionAllProd.innerHTML = `<span style="font-style: italic; color: gray;" > No hay productos que cumplan con la búsqueda, intenta con otro filtro </span>`;
+  } else {
+    // mostrar solo productos filtrados SIN TOCAR LOS DESTACADOS
+    pintarTodosProductos(
+      prod_filtrados,
+      seccionAllProd,
+      seccionDestacados,
+      "sin_destacados",
+    );
   }
+
+  event.target.reset();
 }
 
 form.addEventListener("submit", obtenerDatosForm);
@@ -137,27 +128,18 @@ form.addEventListener("submit", obtenerDatosForm);
 // cambiar estado destacado si  clic -> producto.destacado = !producto.destacado
 //actualizar el arreglo de json?
 
-function destacar(event) {
+function actualizar_destacados(event) {
   // 1. buscar en la clase del boton la referencia del producto
+
   const ClaseSKU = event.target.parentNode.classList[1];
-
-  // usando find buscar el encontrar indice del producto de con la misma referencia
-  let index_producto = productos.findIndex((producto) =>
-    producto.sku.includes(ClaseSKU)
-  );
-
-  //producto resultado del find
-  prod_a_Destacar = productos[index_producto];
-
-  prod_a_Destacar.destacado = !prod_a_Destacar.destacado;
-
-  //productos.push(prod_a_Destacar); //-> sobreescribir objeto en lugar de añadirlo --  es necesario?
+  // cambiar destacado con ese sku a true
+  destacar(ClaseSKU, productosCopy);
 
   //actualizar los productos que se muestran como destacados
   pintarTodosProductos(
-    productos,
+    productosCopy,
     seccionAllProd,
     seccionDestacados,
-    "all_products"
+    "all_products",
   );
 }
