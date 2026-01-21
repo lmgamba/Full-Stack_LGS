@@ -8,9 +8,8 @@ A comprehensive collection of projects developed during my Full-Stack Developer 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![WSL](https://img.shields.io/badge/WSL-326FC4?style=for-the-badge&logo=linux&logoColor=white)
 
-
-## 🎯 Projects Overview
 
 
 ## 📊 Project Overview
@@ -22,6 +21,7 @@ A comprehensive collection of projects developed during my Full-Stack Developer 
 | **📱 Responsive Landing Page** | [![My Skills](https://skillicons.dev/icons?i=vscode,html,css)](https://skillicons.dev) | Mobile-first, Responsive design |
 | **🅰️ Angular Application** | [![My Skills](https://skillicons.dev/icons?i=nodejs,angular,typescript)](https://skillicons.dev) | Component architecture, RxJS, Full-stack planning |
 
+**Everything was donde while using WSL!**   [![My Skills](https://skillicons.dev/icons?i=ubuntu,wsl)](https://skillicons.dev)
 ---
 
 ## 📁 Repository Structure
@@ -76,11 +76,11 @@ A comprehensive collection of projects developed during my Full-Stack Developer 
 **Technologies:** Python, FastAPI, MySQL, SQLAlchemy, Pydantic
 
 **Key Features:**
-**:computer: Complete CRUD** | CRUD operations for products with RESTful API  
-**✅ Input Validation** |  Pydantic and ModelBase Classes
-**🔍Advanced Advanced Query System** | Multi-parameter filtering (price ranges, text search)  
-**📊 Advanced Query System** | Relational database design (User ↔ Product)  
-**🔐 Full Authentication** | Dependencies and Authentication with password hashing
+**:computer: Complete CRUD** | CRUD operations for products with RESTful API    
+**✅ Input Validation** |  Pydantic and ModelBase Classes  
+**🔍Advanced Advanced Query System** | Multi-parameter filtering (price ranges, text search)    
+**📊 Advanced Query System** | Relational database design (User ↔ Product)    
+**🔐 Full Authentication** | Dependencies and Authentication with password hashing  
 **:warning:Proper error handling** and HTTP status codes  
 
 ---
