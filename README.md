@@ -1,24 +1,27 @@
 # 🎓 Full-Stack Development Portfolio
-# 👋 Hi, I'm Laura
 
-**Electronic Engineer → Full-Stack Developer** 
+## 👋 Hi, I'm Laura
+
+**Full-Stack Developer** 
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Git](https://img.shields.io/badge/Git-DE5D3F?style=for-the-badge&logo=git&logoColor=black)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![REACT](https://img.shields.io/badge/React-326FC4?style=for-the-badge&logo=react&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![WSL](https://img.shields.io/badge/WSL-326FC4?style=for-the-badge&logo=linux&logoColor=white)
-![REACT](https://img.shields.io/badge/REACT-326FC4?style=for-the-badge&logo=react&logoColor=white)
 
 
 
-I'm a electronic engineer who enjoys building modern web applications. My engineering background brings systematic problem-solving 
-and quality-focused development to every project. The skills above are in profencicy order.
-This is a comprehensive collection of projects showcasing my progressive learning from frontend fundamentals to backend API development.
+I'm a Full-Stack Developer with a foundation in Electronics Engineering. I apply engineering principles including systematic problem-solving, architectural thinking, and quality rigor, to develop efficient, well-structured web applications.
+I enjoy the entire process, from discussing business logic and designing the database schema to implementing the frontend interface. For me, great code is a blend of logic, clarity, and teamwork.
 
----
+Below, you'll find a collection of my hands-on projects that showcase this journey.
+
+# Projects
 
 ## 🛒 Interactive E-commerce with JavaScript Testing   | [![My Skills](https://skillicons.dev/icons?i=js,jest,html,css)](https://skillicons.dev)
 
@@ -35,22 +38,31 @@ This is a comprehensive collection of projects showcasing my progressive learnin
 
 ---
 
-## Complete REST API with FastAPI & MySQL | [![My Skills](https://skillicons.dev/icons?i=python,fastapi,mysql)](https://skillicons.dev) 
+## 🔍 Complete REST API with FastAPI & MySQL |  [![My Skills](https://skillicons.dev/icons?i=python,fastapi,mysql)](https://skillicons.dev) 
 
 **🔗 [View Code →](https://github.com/lmgamba/Full-Stack_LGS/blob/main/3_CRUD_api_mysql_python/controllers/user_controller.py)**  
+
 **Technologies:** Python, FastAPI, MySQL, Pydantic
 
 **Key Features:**
 **:computer: Complete CRUD** | CRUD operations for products with RESTful API    
 **✅ Input Validation** |  Pydantic and ModelBase Classes  
-**🔍Advanced Advanced Query System** | Multi-parameter filtering (price ranges, text search)    
+**🔍Advanced Filters** | Multi-parameter filtering (price ranges, text search)    
 **📊 Advanced Query System** | Relational database design (User <-> Product)    
 **🔐 Full Authentication** | Dependencies and Authentication with password hashing  
 **:warning:Proper error handling** and HTTP status codes  
 
----
 
-## Static Restaurant Website - "Rovers Hamburgers" |  [![My Skills](https://skillicons.dev/icons?i=vscode,html,css)](https://skillicons.dev)
+## 📊 Backend Data Processing System for Dashboard | Academic Engineering Project [![My Skills](https://skillicons.dev/icons?i=gcp)](https://skillicons.dev)
+
+🔗 **[View Project Summary →](https://repositorio.uniandes.edu.co/entities/publication/bdc17c51-a11d-45a4-8acf-1c88cd7b4c37)**
+
+**Technologies:** Python (Backend), Google BigQuery (Cloud SQL), Looker Studio (Frontend/Client)
+
+This project was my first encounter with building a data processing system, focusing on backend architecture and visualization.
+
+
+## 🍔 Static Restaurant Website - "Rovers Hamburgers" |  [![My Skills](https://skillicons.dev/icons?i=vscode,html,css)](https://skillicons.dev)
 
 **🔗 [View Code →](https://github.com/lmgamba/Full-Stack_LGS/blob/main/1_static_front_hamburgueseria/index.html)**  
 **Technologies:** HTML5, CSS3, Flexbox, Responsive Design
@@ -61,7 +73,7 @@ This is a comprehensive collection of projects showcasing my progressive learnin
 **🍔 Interactive Navigation** | Iimplementing a hamburger menu for mobile 
 
 ---
-## 📚 Currently Exploring
+## 📚 In Active Development
 
 <summary><b> Modern Frontend Frameworks - React, TypeScript & Angular </b></summary>  
 
@@ -77,7 +89,7 @@ while maintaining strong fundamentals in vanilla JavaScript.
 - RxJS for reactive programming patterns
 - Planning full-stack integration with existing FastAPI backend
 
-**Status:** Actively development
+**Status:** Actively in development
 
 </details>
 
