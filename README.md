@@ -102,14 +102,14 @@ while maintaining strong fundamentals in vanilla JavaScript.
 - Intensive software development training across multiple technologies, including Python, FastAPI, JavaScript, React, MySQL
 - Practical projects: Complete web applications, RESTful APIs, and reusable components
 
-**B.S. Electrical & Electronic Engineering (Dual Degree)** | Universidad de los Andes (2018-2023)  
-Relevant coursework: Programming (Python, MATLAB), Control Systems. Minor in Design (Graphic)
+**B.S. Electrical & Electronic Engineering (Dual Degree) with Minor in (Graphic) Design**  | Universidad de los Andes (2018-2023)  
+Relevant coursework: Programming (Python, MATLAB),  Control Systems, Figma. 
 
 ---
 
 ## 📫 Let's Connect
 
-I'm actively seeking **Junior Backend or Full-Stack Developer** opportunities in 
+I'm actively seeking **Junior Backend (Python), Full-Stack, or Frontend Developer** opportunities in 
 Madrid or remote within Spain. Open to relocation.
 
 [![text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/laura-gamba-sanchez/) 
@@ -121,4 +121,4 @@ project demonstrates progressive skill development from frontend fundamentals
 to backend API architecture, with emphasis on code quality, testing, and best 
 practices.*
 
-*Note: These are educational projects developed as part of a structured bootcamp curriculum. The design specifications and and learning objectives were provided; implementation demonstrates practical application of concepts and technical problem-solving skills as part of the learning process.*
+*Note: Most are educational projects developed as part of a structured bootcamp curriculum. The design specifications and and learning objectives were provided; implementation demonstrates practical application of concepts and technical problem-solving skills as part of the learning process.*
