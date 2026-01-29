@@ -50,6 +50,7 @@ Below, you'll find a collection of my hands-on projects that showcase this journ
 **🔍Advanced Filters** | Multi-parameter filtering (price ranges, text search)    
 **📊 Advanced Query System** | Relational database design (User <-> Product)    
 **🔐 Full Authentication** | Dependencies and Authentication with password hashing  
+**🧪 Unit Testing with Pytest** | Comprehensive unit testing for user API (with mock DB), and integration testing with DB connection
 **:warning:Proper error handling** and HTTP status codes  
 
 
