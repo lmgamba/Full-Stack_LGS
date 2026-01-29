@@ -9,44 +9,16 @@ router = APIRouter()
 
 # obtener usuario por id http://localhost:8000/users/
 
+# @router.get('/{user_id}', status_code=200)
+# async def get_users_by_id(user_id: str):
+#         return await user_controller.obtener_usuario_by_id(int(user_id))
 
 ##########VERSION CON AUTENTIFICACION#############
-## Se pone user=Depends(get_current_user) como otro parametro  para que se ejecute la dependencia y compruebe el token
+##  user=Depends(get_current_user) como otro parametro  para que se ejecute la dependencia y compruebe el token
 @router.get('/{user_id}', status_code= 200)
 async def get_users_by_id(user_id: str, user=Depends(is_admin_or_owner)):
      return await user_controller.obtener_usuario_by_id(int(user_id))
-##  -> de esta forma no deja leer el id sin que "seamos " el usuario logeado
-# en peticiones. rest se añade:
-# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjUsInJvbCI6InVzZXIiLCJleHBpcmUiOjE3NjgwNzE1MDd9.YqyO7wYH1uU5xQD03Lee5_dCk5WPE4LHdT-B6h21_9g
 
-
-
-"""
-VERSION SIN AUTENTIFICACION
-
-@router.get('/{user_id}', status_code= 200)
-async def get_users_by_id(user_id: str):
-    #llama al controlador a la funcion obtener_usuarios por id -->>> RECORDAR pasar id a int
-    return await user_controller.obtener_usuario_by_id(int(user_id))
-    """
-
-# obtener usuario por edades http://localhost:8000/users/
-
-"""
-FILTRO EDAD OPCION 2: USANDO queryparams
-con queryparams la ruta seria como:
-
-http://localhost:8000/users/filter/age?agemin=12&agemax=24&name="juan"
-
-esta ruta esta asignando los parametros:
-agemin = 12 de tipo int => NO HAY QUE PASARLO A INT DENTRO DE LA FUNCION
-agemax =24 de tipo int
-name = juan, de tipo string (por eso con comillas)
-
-@router.get('/filter/edad', status_code= 200)
-def get_users_by_age(agemin: int,agemax: int):
-    return  user_controller.obtener_usuarios_by_age(int(agemin),int(agemax))
-"""
 
 @router.get('/filter/edad', status_code= 200)
 async def get_users_by_age(agemin: int,agemax: int):

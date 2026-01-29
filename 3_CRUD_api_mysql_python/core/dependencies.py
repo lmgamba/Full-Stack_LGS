@@ -10,10 +10,10 @@ async def get_current_user(token:str= Depends(oauth2)):
     payload = decode_token(token)
     print(payload)
     if not payload :
-        raise HTTPException(status_code=401, detail="Token invalido")
+        raise HTTPException(status_code=401, detail="Usuario o contraseña incorrecto")
     user_id= payload.get('id')
     if not user_id:
-        raise HTTPException(status_code= 404, detail="Usuario no existe")
+        raise HTTPException(status_code= 404, detail="Usuario o contraseña incorrecto")
     
     usuario= await obtener_usuario_by_id(user_id)
     return usuario

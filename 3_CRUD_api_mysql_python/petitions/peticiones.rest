@@ -5,7 +5,7 @@ GET {{hostname}}/users/5
 ###
 GET {{hostname}}/users/25
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInJvbCI6ImFkbWluIiwiZXhwaXJlIjoxNzY5MDE0MzE5fQ.AxExbJKTBymRU0PkR9E8IQQAfbqKoUld8H0bGycW1vY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInJvbCI6ImFkbWluIiwiZXhwaXJlIjoxNzY5NzkwNDgwfQ.eyib4u8V2v0pLa3dkmZ0ERJpjovqWqhuNaPi9V80YSs
 
 ###
 

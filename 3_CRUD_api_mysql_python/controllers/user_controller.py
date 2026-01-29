@@ -1,9 +1,9 @@
 from db.config import *
 from fastapi import HTTPException , Depends, Path
-from models.user_model import *
+from models.user_model import UserCreate,UserLogin,User
 import aiomysql as aio
 
-#AQUI SE CONECTA A LA DATABASE
+
 
 async def obtener_usuario_by_id(user_id):
     try:
@@ -21,7 +21,6 @@ async def obtener_usuario_by_id(user_id):
         
         
 #obtener usuarios entre un rango de edades
-
 async def obtener_usuarios_by_age(agemin,agemax):
     
     if agemin > agemax:
@@ -47,9 +46,7 @@ async def registrar(user: UserCreate):
     try:
         conn= await get_connection()
         async with conn.cursor(aio.DictCursor) as cursor:
-            #TODO: hashear password = hecho en auth controller
-            
-            #se lanza la consulta
+ 
             await cursor.execute("INSERT INTO 202509_shop.users (name,surname,age,mail,status,password,rol) VALUES (%s,%s,%s,%s,%s,%s,%s)", (user.name, user.surname, user.age, user.mail, user.status, user.password, user.rol))
 
             await conn.commit() #el commit no devuelve nada, solo hace el registro

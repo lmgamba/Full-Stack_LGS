@@ -4,7 +4,7 @@ from fastapi import HTTPException
 from models.product_model import *
 
 
-#AQUI SE CONECTA A LA DATABASE
+#conexión a la db
 #################################################
 ################## READ ######################
 async def obtener_producto_by_id(product_id: int):
