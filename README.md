@@ -32,7 +32,7 @@ interface, watch it work.
 For me, great code needs logic, clarity, and proper testing. Another think about me: I like to learn constantly (currently: 
 React and TypeScript, but also Mandarin and German in my free time, just because).
 
-**What I'm looking for:** Junior backend or full-stack developer roles where I can 
+**What I'm looking for:** Backend or full-stack developer roles where I can 
 apply engineering rigor to real products, work with quality-focused teams, and continue growing in a dynamic tech environment.
 
 ---
