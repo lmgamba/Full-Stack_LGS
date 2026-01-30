@@ -14,12 +14,32 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![WSL](https://img.shields.io/badge/WSL-326FC4?style=for-the-badge&logo=linux&logoColor=white)
 
+# 👋 Hi, I'm Laura
 
+I'm an **Electronic Engineer with a minor in Design turned Full-Stack Developer**, combining systematic engineering thinking with a passion for building software people can actually use.
 
-I'm a Full-Stack Developer with a foundation in Electronics Engineering. I apply engineering principles including systematic problem-solving, architectural thinking, and quality rigor, to develop efficient, well-structured web applications.
-I enjoy the entire process, from discussing business logic and designing the database schema to implementing the frontend interface. For me, great code is a blend of logic, clarity, and teamwork.
+**Why web development:** After working in automotive engineering, I realized my 
+favorite part wasn't just solving technical problems, it was creating solutions you 
+could interact with. Web development gives me that immediate feedback loop: design the logic, build the 
+interface, watch it work.
 
-Below, you'll find a collection of my hands-on projects that showcase this journey.
+### What I bring from engineering:
+- **🔍Systematic problem-solving and methodical debugging :** My experience taught me how to troubleshoot complex systems under pressure. 
+- **🧪Quality-first mindset and  attention to detail:** in automotive, "works most of the time" isn't acceptable, I've learn to love tests .
+- **📊Architectural thinking:** I design database schemas and application logic like I designed circuits: clean, logical, and scalable. My degree project involved building a data processing system with Python and BigQuery
+
+**My approach:** I enjoy the full stack "from database design to frontend" interfaces. 
+For me, great code needs logic, clarity, and proper testing. Another think about me: I like to learn constantly (currently: 
+React and TypeScript, but also Mandarin and German in my free time, just because).
+
+**What I'm looking for:** Junior backend or full-stack developer roles where I can 
+apply engineering rigor to real products, work with quality-focused teams, and continue growing in a dynamic tech environment.
+
+---
+
+📂 **Projects below:** Full -stack, Testing practices, database design, API architecture  
+🔗 **[LinkedIn](https://www.linkedin.com/in/laura-gamba-sanchez/)** | 📧 **laura.gamba.sanchez@gmail.com** | 📍 **Spain**
+
 
 # Projects
 
